@@ -30,7 +30,7 @@ export default function Under10000Page() {
           Best Phones Under ₹10,000
         </h1>
         <p className="text-purple-100 text-sm max-w-xl">
-          You don't need to spend a fortune to get a great smartphone. These
+          You don&apos;t need to spend a fortune to get a great smartphone. These
           picks offer the best value, battery life, and performance under ₹10,000.
         </p>
       </div>
