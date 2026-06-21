@@ -90,10 +90,10 @@ export default function PhoneGrid({
 
       {showFilters && (
         <div className="flex flex-col sm:flex-row gap-3 mb-6">
-          {/* Category pills */}
+          {/* Category pills - only show tags that have products on this page */}
           <div className="flex items-center gap-2 flex-wrap flex-1">
             <SlidersHorizontal size={14} className="text-slate-400 flex-shrink-0" />
-            {FILTER_TAGS.map((tag) => (
+            {FILTER_TAGS.filter((tag) => tag.value === "all" || phones.some((p) => p.category.includes(tag.value as string))).map((tag) => (
               <button
                 key={tag.value}
                 onClick={() => setActiveTag(tag.value)}

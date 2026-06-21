@@ -41,7 +41,7 @@ export default async function CategoryPage({ params }: Props) {
         <p className="text-white/90 text-sm max-w-xl">{cat.description}</p>
       </div>
 
-      <PhoneGrid phones={products} showFilters />
+      <PhoneGrid phones={products} />
     </PageLayout>
   );
 }

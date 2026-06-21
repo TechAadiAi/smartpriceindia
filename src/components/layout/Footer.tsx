@@ -14,8 +14,11 @@ const footerLinks = {
     { label: "Home & Furniture", href: "/category/home-furniture" },
     { label: "Groceries & Pets", href: "/category/groceries-pets" },
     { label: "Books & Education", href: "/category/books-education" },
-    { label: "Sports & Fitness", href: "/category/sports-fitness" },
+    { label: "Video & Music", href: "/category/video-music" },
+    { label: "Games & Live", href: "/category/games-live" },
+    { label: "Pharmacy & Household", href: "/category/pharmacy-household" },
     { label: "Toys & Kids", href: "/category/toys-kids" },
+    { label: "Sports & Fitness", href: "/category/sports-fitness" },
   ],
   Company: [
     { label: "About Us", href: "/about" },
