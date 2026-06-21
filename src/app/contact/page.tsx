@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import PageLayout from "@/components/layout/PageLayout";
-import { Mail, Twitter, Instagram } from "lucide-react";
+import { Mail, Youtube, Instagram } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact Us – SmartPriceIndia",
@@ -20,11 +20,26 @@ export default function ContactPage() {
 
         <div className="grid sm:grid-cols-3 gap-4 mb-10">
           {[
-            { icon: <Mail size={20} />, label: "Email", value: "hello@smartpriceindia.in", href: "mailto:hello@smartpriceindia.in" },
-            { icon: <Twitter size={20} />, label: "Twitter", value: "@SmartPriceIN", href: "https://twitter.com/SmartPriceIN" },
-            { icon: <Instagram size={20} />, label: "Instagram", value: "@smartpriceindia", href: "https://instagram.com/smartpriceindia" },
+            {
+              icon: <Mail size={20} />,
+              label: "Email",
+              value: "smartpriceindiaofficial@gmail.com",
+              href: "mailto:smartpriceindiaofficial@gmail.com"
+            },
+            {
+              icon: <Instagram size={20} />,
+              label: "Instagram",
+              value: "@smartpriceindia",
+              href: "https://instagram.com/smartpriceindia"
+            },
+            {
+              icon: <Youtube size={20} />,
+              label: "YouTube",
+              value: "SmartPriceIndia",
+              href: "https://www.youtube.com/@SmartPriceIndiaOfficial"
+            },
           ].map((item) => (
-            <a
+            
               key={item.label}
               href={item.href}
               target="_blank"
@@ -35,7 +50,7 @@ export default function ContactPage() {
                 {item.icon}
               </div>
               <p className="text-xs font-semibold text-slate-500 dark:text-slate-400">{item.label}</p>
-              <p className="text-sm font-medium text-slate-900 dark:text-white">{item.value}</p>
+              <p className="text-sm font-medium text-slate-900 dark:text-white break-all">{item.value}</p>
             </a>
           ))}
         </div>
@@ -46,7 +61,6 @@ export default function ContactPage() {
             We typically reply within 24–48 hours on business days.
           </p>
 
-          {/* Static form — wire to Formspree or similar */}
           <div className="space-y-4">
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
@@ -98,8 +112,8 @@ export default function ContactPage() {
             </button>
             <p className="text-xs text-center text-slate-400">
               Or email us directly at{" "}
-              <a href="mailto:hello@smartpriceindia.in" className="text-blue-600 hover:underline">
-                hello@smartpriceindia.in
+              <a href="mailto:smartpriceindiaofficial@gmail.com" className="text-blue-600 hover:underline">
+                smartpriceindiaofficial@gmail.com
               </a>
             </p>
           </div>
