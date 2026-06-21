@@ -1,250 +1,195 @@
 import Link from "next/link";
-import Image from "next/image";
-import { ArrowRight, Star, ShoppingCart, TrendingUp, Shield, Zap } from "lucide-react";
+import { ArrowRight, TrendingUp, Shield, Zap, Tag, Star } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import PhoneCard from "@/components/phones/PhoneCard";
 import AdBanner from "@/components/home/AdBanner";
 import NewsletterBanner from "@/components/home/NewsletterBanner";
-import Badge from "@/components/ui/Badge";
 import {
   getFeaturedPhones,
   getLatestPhones,
+  getTrendingProducts,
+  getTopDeals,
   budgetCategories,
+  productCategories,
   getPhonesByCategory,
 } from "@/lib/phones";
-import { formatPrice } from "@/lib/utils";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Best Smartphones in India 2024 – Reviews, Prices & Comparisons",
+  title: "SmartPriceIndia – Best Home, Kitchen & Tech Gadget Reviews in India",
   description:
-    "Discover the best smartphones in India. Expert reviews, price comparisons, and buying guides for every budget. Updated daily.",
+    "Discover the best home, kitchen and tech gadgets in India. Expert reviews, price comparisons, and buying guides for every budget. Updated daily.",
 };
 
 export default function HomePage() {
-  const featuredPhones = getFeaturedPhones();
-  const latestPhones = getLatestPhones(6);
-  const under10k = getPhonesByCategory("under-10000").slice(0, 3);
+  const featured = getFeaturedPhones();
+  const latest = getLatestPhones(6);
+  const trending = getTrendingProducts(4);
+  const deals = getTopDeals(4);
+  const under500 = getPhonesByCategory("under-500").slice(0, 3);
 
   return (
     <>
       <Navbar />
       <main>
         {/* ── Hero ── */}
-        <section className="bg-gradient-to-br from-blue-950 via-blue-900 to-indigo-950 text-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="inline-flex items-center gap-2 bg-blue-800/50 text-blue-200 text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
-                  <TrendingUp size={12} />
-                  Updated for 2024 — India&apos;s Best Picks
-                </div>
-                <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
-                  Find Your Perfect
-                  <span className="block text-blue-400">Smartphone</span>
-                  at the Best Price
-                </h1>
-                <p className="text-blue-200 text-lg leading-relaxed mb-8">
-                  Honest reviews, real comparisons, and expert buying guides — tailored
-                  for Indian consumers. From budget phones to flagship killers.
-                </p>
-                <div className="flex flex-wrap gap-3">
-                  <Link
-                    href="/latest"
-                    className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold px-6 py-3 rounded-xl transition-colors"
-                  >
-                    Explore Latest Phones <ArrowRight size={16} />
-                  </Link>
-                  <Link
-                    href="/under-10000"
-                    className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 rounded-xl transition-colors border border-white/20"
-                  >
-                    Best Under ₹10,000
-                  </Link>
-                </div>
-              </div>
+        <section className="relative bg-gradient-to-br from-orange-50 via-white to-amber-50 dark:from-gray-950 dark:via-gray-950 dark:to-gray-900 overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
+            <div className="inline-flex items-center gap-2 bg-orange-100 dark:bg-orange-950 text-orange-700 dark:text-orange-400 text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
+              <TrendingUp size={12} />
+              India&apos;s Trusted Product Review Platform
+            </div>
+            <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-4 text-slate-900 dark:text-white">
+              Find the <span className="text-orange-500">Best Products</span>
+              <span className="block">at the Best Prices</span>
+            </h1>
+            <p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto mb-8">
+              Honest reviews and buying guides for home, kitchen & tech gadgets — handpicked for Indian shoppers.
+            </p>
 
-              {/* Hero Featured Phone */}
-              {featuredPhones[0] && (
-                <div className="hidden md:block">
-                  <div className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm">
-                    <div className="flex items-start justify-between mb-4">
-                      <div>
-                        <Badge label={featuredPhones[0].badge ?? "Editor's Pick"} />
-                        <p className="text-blue-300 text-sm mt-2">{featuredPhones[0].brand}</p>
-                        <h2 className="text-xl font-bold text-white">{featuredPhones[0].name}</h2>
-                      </div>
-                      <div className="text-right">
-                        <p className="text-2xl font-extrabold text-white">
-                          {formatPrice(featuredPhones[0].price)}
-                        </p>
-                        {featuredPhones[0].originalPrice && (
-                          <p className="text-blue-300 text-sm line-through">
-                            {formatPrice(featuredPhones[0].originalPrice)}
-                          </p>
-                        )}
-                      </div>
-                    </div>
-                    <Image
-                      src={featuredPhones[0].image}
-                      alt={featuredPhones[0].name}
-                      width={200}
-                      height={200}
-                      className="mx-auto my-4 object-contain"
-                    />
-                    <div className="flex items-center gap-1 mb-4">
-                      {[1, 2, 3, 4, 5].map((s) => (
-                        <Star
-                          key={s}
-                          size={14}
-                          className={
-                            s <= Math.floor(featuredPhones[0].rating)
-                              ? "fill-amber-400 text-amber-400"
-                              : "fill-white/20 text-white/20"
-                          }
-                        />
-                      ))}
-                      <span className="text-blue-200 text-sm ml-1">
-                        {featuredPhones[0].rating} · {featuredPhones[0].reviewCount.toLocaleString("en-IN")} reviews
-                      </span>
-                    </div>
-                    <a
-                      href={featuredPhones[0].affiliateLink}
-                      target="_blank"
-                      rel="noopener noreferrer nofollow"
-                      className="w-full flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-400 text-white font-semibold py-2.5 rounded-xl transition-colors"
-                    >
-                      <ShoppingCart size={16} />
-                      Buy on Amazon
-                    </a>
-                  </div>
-                </div>
-              )}
+            {/* Search bar */}
+            <form action="/search" method="get" className="max-w-xl mx-auto flex gap-2 mb-8">
+              <input
+                name="q"
+                type="text"
+                placeholder="Search air fryer, smart watch, robot vacuum..."
+                className="flex-1 px-5 py-3.5 bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-700 rounded-xl text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-orange-500 shadow-sm"
+              />
+              <button type="submit" className="px-6 py-3.5 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-xl transition-colors shadow-sm">
+                Search
+              </button>
+            </form>
+
+            <div className="flex flex-wrap gap-3 justify-center">
+              <Link href="/category/tech-gadgets" className="inline-flex items-center gap-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold px-6 py-3 rounded-xl hover:opacity-90 transition-opacity">
+                Explore Gadgets <ArrowRight size={16} />
+              </Link>
+              <Link href="/under-500" className="inline-flex items-center gap-2 bg-white dark:bg-gray-800 text-slate-700 dark:text-white font-semibold px-6 py-3 rounded-xl border border-slate-200 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-700 transition-colors">
+                Deals Under ₹500
+              </Link>
             </div>
           </div>
         </section>
 
-        {/* ── Top Ad Banner ── */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <AdBanner size="leaderboard" slot="home-top" />
-        </div>
-
-        {/* ── Budget Categories ── */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">
-            Shop by Budget
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {budgetCategories.map((cat) => (
-              <Link
-                key={cat.slug}
-                href={`/${cat.slug}`}
-                className="group flex items-center gap-4 bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-800 hover:border-blue-300 dark:hover:border-blue-800 rounded-xl p-5 transition-all hover:shadow-md"
-              >
-                <span className="text-3xl">{cat.icon}</span>
-                <div className="flex-1 min-w-0">
-                  <p className="font-bold text-slate-900 dark:text-white">{cat.label}</p>
-                  <p className="text-sm text-slate-500 dark:text-slate-400 truncate">
-                    {cat.description}
-                  </p>
+        {/* ── Featured Categories ── */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Featured Categories</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
+            {productCategories.map((cat) => (
+              <Link key={cat.slug} href={`/category/${cat.slug}`} className="group flex flex-col items-center gap-3 bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-800 hover:border-orange-300 dark:hover:border-orange-800 rounded-xl p-4 transition-all hover:shadow-md text-center">
+                <div className={`w-12 h-12 bg-gradient-to-br ${cat.color} rounded-xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform`}>
+                  {cat.icon}
                 </div>
-                <ArrowRight
-                  size={16}
-                  className="text-slate-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 flex-shrink-0 transition-colors"
-                />
+                <span className="text-xs font-semibold text-slate-700 dark:text-slate-300 leading-tight">{cat.label}</span>
               </Link>
             ))}
           </div>
         </section>
 
-        {/* ── Latest Phones ── */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* ── Top Ad ── */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+          <AdBanner size="leaderboard" slot="home-top" />
+        </div>
+
+        {/* ── Trending Products ── */}
+        {trending.length > 0 && (
+          <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center gap-2">
+                <TrendingUp className="text-orange-500" size={24} />
+                <h2 className="text-2xl font-bold text-slate-900 dark:text-white">Trending Products</h2>
+              </div>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {trending.map((p) => <PhoneCard key={p.id} phone={p} />)}
+            </div>
+          </section>
+        )}
+
+        {/* ── Shop by Price ── */}
+        <section className="bg-slate-50 dark:bg-gray-900 border-y border-slate-200 dark:border-gray-800 py-12">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Shop by Budget</h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+              {budgetCategories.map((cat) => (
+                <Link key={cat.slug} href={`/${cat.slug}`} className="group flex flex-col items-center gap-2 bg-white dark:bg-gray-950 border border-slate-200 dark:border-gray-800 hover:border-orange-300 dark:hover:border-orange-800 rounded-xl p-4 transition-all hover:shadow-md text-center">
+                  <span className="text-2xl group-hover:scale-110 transition-transform">{cat.icon}</span>
+                  <span className="text-sm font-bold text-slate-900 dark:text-white">{cat.label}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Top Deals ── */}
+        {deals.length > 0 && (
+          <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center gap-2">
+                <Tag className="text-red-500" size={24} />
+                <h2 className="text-2xl font-bold text-slate-900 dark:text-white">Top Deals Today</h2>
+              </div>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {deals.map((p) => <PhoneCard key={p.id} phone={p} />)}
+            </div>
+          </section>
+        )}
+
+        {/* ── Mid Ad ── */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+          <AdBanner size="leaderboard" slot="home-mid" />
+        </div>
+
+        {/* ── Latest Reviews ── */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="flex items-center justify-between mb-6">
             <div>
-              <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
-                Latest Smartphones
-              </h2>
-              <p className="text-slate-500 dark:text-slate-400 text-sm mt-1">
-                Freshly reviewed and updated for 2024
-              </p>
+              <h2 className="text-2xl font-bold text-slate-900 dark:text-white">Latest Reviews</h2>
+              <p className="text-slate-500 dark:text-slate-400 text-sm mt-1">Freshly reviewed products</p>
             </div>
-            <Link
-              href="/latest"
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600 dark:text-blue-400 hover:underline"
-            >
+            <Link href="/latest" className="inline-flex items-center gap-1.5 text-sm font-semibold text-orange-600 dark:text-orange-400 hover:underline">
               View all <ArrowRight size={14} />
             </Link>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {latestPhones.map((phone) => (
-              <PhoneCard key={phone.id} phone={phone} />
-            ))}
+            {latest.map((p) => <PhoneCard key={p.id} phone={p} />)}
           </div>
         </section>
 
-        {/* ── Mid Ad Banner ── */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <AdBanner size="leaderboard" slot="home-mid" />
-        </div>
-
-        {/* ── Best Under 10K ── */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="flex items-center justify-between mb-6">
-            <div>
-              <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
-                Best Phones Under ₹10,000
-              </h2>
-              <p className="text-slate-500 dark:text-slate-400 text-sm mt-1">
-                Maximum value for minimum spend
-              </p>
+        {/* ── Best Under 500 ── */}
+        {under500.length > 0 && (
+          <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div className="flex items-center justify-between mb-6">
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 dark:text-white">Best Under ₹500</h2>
+                <p className="text-slate-500 dark:text-slate-400 text-sm mt-1">Maximum value for minimum spend</p>
+              </div>
+              <Link href="/under-500" className="inline-flex items-center gap-1.5 text-sm font-semibold text-orange-600 dark:text-orange-400 hover:underline">
+                See all <ArrowRight size={14} />
+              </Link>
             </div>
-            <Link
-              href="/under-10000"
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600 dark:text-blue-400 hover:underline"
-            >
-              See all <ArrowRight size={14} />
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {under10k.map((phone) => (
-              <PhoneCard key={phone.id} phone={phone} />
-            ))}
-          </div>
-        </section>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {under500.map((p) => <PhoneCard key={p.id} phone={p} />)}
+            </div>
+          </section>
+        )}
 
         {/* ── Why Trust Us ── */}
-        <section className="bg-slate-50 dark:bg-gray-900 border-y border-slate-200 dark:border-gray-800 py-16 mt-8">
+        <section className="bg-slate-50 dark:bg-gray-900 border-y border-slate-200 dark:border-gray-800 py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl font-bold text-slate-900 dark:text-white text-center mb-10">
-              Why Trust SmartPriceIndia?
-            </h2>
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-white text-center mb-10">Why Trust SmartPriceIndia?</h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
               {[
-                {
-                  icon: <Shield className="text-blue-600" size={28} />,
-                  title: "Unbiased Reviews",
-                  desc: "We test every phone independently. No paid reviews — ever.",
-                },
-                {
-                  icon: <TrendingUp className="text-blue-600" size={28} />,
-                  title: "Daily Price Updates",
-                  desc: "Prices are checked daily so you always see the latest deals.",
-                },
-                {
-                  icon: <Zap className="text-blue-600" size={28} />,
-                  title: "India-Focused",
-                  desc: "Our guides are built for Indian users, networks, and budgets.",
-                },
+                { icon: <Shield className="text-orange-500" size={28} />, title: "Unbiased Reviews", desc: "We test products independently. No paid reviews — ever." },
+                { icon: <TrendingUp className="text-orange-500" size={28} />, title: "Daily Price Updates", desc: "Prices checked daily so you always see the latest deals." },
+                { icon: <Zap className="text-orange-500" size={28} />, title: "India-Focused", desc: "Our guides are built for Indian shoppers and budgets." },
               ].map((item) => (
                 <div key={item.title} className="text-center">
-                  <div className="w-14 h-14 bg-blue-50 dark:bg-blue-950 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    {item.icon}
-                  </div>
+                  <div className="w-14 h-14 bg-orange-50 dark:bg-orange-950 rounded-2xl flex items-center justify-center mx-auto mb-4">{item.icon}</div>
                   <h3 className="font-bold text-slate-900 dark:text-white mb-2">{item.title}</h3>
-                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
-                    {item.desc}
-                  </p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -252,11 +197,32 @@ export default function HomePage() {
         </section>
 
         {/* ── Newsletter ── */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <NewsletterBanner />
         </div>
 
-        {/* ── Bottom Ad Banner ── */}
+        {/* ── FAQ ── */}
+        <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-white text-center mb-8">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            {[
+              { q: "Are these reviews genuine?", a: "Yes. We research and test products independently. We never accept payment to influence our reviews." },
+              { q: "Do you earn commission?", a: "As an Amazon Associate, we earn from qualifying purchases at no extra cost to you. This keeps the site free." },
+              { q: "How often are prices updated?", a: "We check prices regularly, but always verify the final price on Amazon before buying as prices change frequently." },
+              { q: "Which categories do you cover?", a: "Home & Kitchen, Tech Gadgets, Smart Home, Kitchen Appliances, Home Organization, Car Accessories and Lifestyle Gadgets." },
+            ].map((faq, i) => (
+              <details key={i} className="group bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-800 rounded-xl p-5">
+                <summary className="flex items-center justify-between cursor-pointer font-semibold text-slate-900 dark:text-white list-none">
+                  {faq.q}
+                  <ArrowRight className="group-open:rotate-90 transition-transform text-orange-500" size={16} />
+                </summary>
+                <p className="text-sm text-slate-500 dark:text-slate-400 mt-3 leading-relaxed">{faq.a}</p>
+              </details>
+            ))}
+          </div>
+        </section>
+
+        {/* ── Bottom Ad ── */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <AdBanner size="leaderboard" slot="home-bottom" />
         </div>

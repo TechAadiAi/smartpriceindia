@@ -1,304 +1,301 @@
-import { Phone, BudgetCategory } from "@/types/phone";
+import { Phone, BudgetCategory, ProductCategory } from "@/types/phone";
 
+// ── Product Categories (gadgets + home & kitchen) ──
+export const productCategories: ProductCategory[] = [
+  { label: "Home & Kitchen", slug: "home-kitchen", description: "Everyday essentials for a smarter home", icon: "🏠", color: "from-orange-500 to-amber-500" },
+  { label: "Tech Gadgets", slug: "tech-gadgets", description: "Latest gadgets worth your money", icon: "⚡", color: "from-blue-500 to-cyan-500" },
+  { label: "Smart Home Devices", slug: "smart-home", description: "Automate and upgrade your living space", icon: "🤖", color: "from-violet-500 to-purple-500" },
+  { label: "Kitchen Appliances", slug: "kitchen-appliances", description: "Cook smarter, not harder", icon: "🍳", color: "from-red-500 to-rose-500" },
+  { label: "Home Organization", slug: "home-organization", description: "Declutter and organize in style", icon: "📦", color: "from-emerald-500 to-teal-500" },
+  { label: "Car Accessories", slug: "car-accessories", description: "Essential add-ons for your ride", icon: "🚗", color: "from-slate-500 to-gray-600" },
+  { label: "Lifestyle Gadgets", slug: "lifestyle-gadgets", description: "Gadgets that make life easier", icon: "✨", color: "from-pink-500 to-fuchsia-500" },
+];
+
+// ── Demo Products ──
+// NOTE: Replace affiliateLink + price with your real Amazon links later
 export const phones: Phone[] = [
+  // ───── UNDER ₹500 ─────
   {
-    id: "1",
-    slug: "redmi-13c-5g",
-    name: "Redmi 13C 5G",
-    brand: "Xiaomi",
-    price: 9999,
-    originalPrice: 12999,
-    rating: 4.2,
-    reviewCount: 15420,
-    image: "https://placehold.co/400x400/1a1a2e/ffffff?text=Redmi+13C+5G",
-    badge: "Budget King",
-    shortDescription:
-      "Best 5G phone under ₹10,000 with MediaTek Dimensity 6100+ and 50MP camera.",
-    fullDescription:
-      "The Redmi 13C 5G is a game-changer in the budget segment, bringing 5G connectivity to the masses. Powered by the MediaTek Dimensity 6100+ processor, it delivers smooth performance for everyday tasks and light gaming. The 50MP triple camera setup captures detailed photos even in low light.",
-    pros: [
-      "5G connectivity at an unbeatable price",
-      "50MP triple camera system",
-      "5000mAh large battery",
-      "90Hz smooth display",
-      "MIUI 14 with Android 13",
-    ],
-    cons: [
-      "Plastic build quality",
-      "No HD+ display (720p only)",
-      "Slow 18W charging",
-      "Bloatware from MIUI",
-    ],
-    specs: {
-      display: '6.74" IPS LCD, 720x1600, 90Hz',
-      processor: "MediaTek Dimensity 6100+ (6nm)",
-      ram: "4GB / 6GB / 8GB",
-      storage: "128GB (expandable to 1TB)",
-      battery: "5000mAh",
-      camera: "50MP + 2MP + AI lens",
-      os: "MIUI 14, Android 13",
-      charging: "18W Fast Charging",
-      network: "5G, 4G LTE, Wi-Fi 5",
-    },
-    affiliateLink: "https://www.amazon.in/dp/B0CNX7BZ7R",
-    category: ["under-10000", "5g", "battery"],
-    isAvailable: true,
-    publishedAt: "2024-01-15",
-    updatedAt: "2024-03-01",
-  },
-  {
-    id: "2",
-    slug: "samsung-galaxy-m14-5g",
-    name: "Samsung Galaxy M14 5G",
-    brand: "Samsung",
-    price: 13499,
-    originalPrice: 16499,
-    rating: 4.3,
-    reviewCount: 22310,
-    image: "https://placehold.co/400x400/0f3460/ffffff?text=Galaxy+M14+5G",
-    badge: "Editor's Pick",
-    shortDescription:
-      "Samsung's most value-packed 5G phone with 6000mAh battery and Exynos 1330.",
-    fullDescription:
-      "Samsung Galaxy M14 5G stands out in the mid-budget category with its massive 6000mAh battery and clean One UI 5.1 experience. The Exynos 1330 processor handles multitasking with ease, and Samsung promises 4 years of security updates.",
-    pros: [
-      "6000mAh massive battery",
-      "Clean One UI experience",
-      "4 years of security updates",
-      "Bright FHD+ display",
-      "Trusted Samsung after-sales service",
-    ],
-    cons: [
-      "Exynos 1330 not as fast as Snapdragon rivals",
-      "25W charging (no charger in box)",
-      "Average camera performance",
-      "Slightly heavy at 206g",
-    ],
-    specs: {
-      display: '6.6" FHD+ Super AMOLED, 90Hz',
-      processor: "Samsung Exynos 1330 (5nm)",
-      ram: "4GB / 6GB",
-      storage: "64GB / 128GB (expandable to 1TB)",
-      battery: "6000mAh",
-      camera: "50MP + 2MP + 2MP",
-      os: "One UI 5.1, Android 13",
-      charging: "25W Fast Charging",
-      network: "5G, 4G LTE, Wi-Fi 5",
-    },
-    affiliateLink: "https://www.amazon.in/dp/B0BZCSSNV7",
-    category: ["under-15000", "5g", "battery"],
-    isAvailable: true,
-    publishedAt: "2024-01-20",
-    updatedAt: "2024-03-05",
-  },
-  {
-    id: "3",
-    slug: "poco-m6-pro-5g",
-    name: "POCO M6 Pro 5G",
-    brand: "POCO",
-    price: 12999,
-    originalPrice: 15999,
-    rating: 4.4,
-    reviewCount: 18900,
-    image: "https://placehold.co/400x400/533483/ffffff?text=POCO+M6+Pro",
+    id: "1", slug: "stainless-steel-vegetable-chopper", name: "Stainless Steel Vegetable Chopper", brand: "Kitchen Pro",
+    price: 399, originalPrice: 799, rating: 4.3, reviewCount: 8420,
+    image: "https://placehold.co/400x400/f97316/ffffff?text=Veg+Chopper",
     badge: "Best Seller",
-    shortDescription:
-      "Snapdragon 4 Gen 2 powerhouse with 108MP camera and 5000mAh battery.",
-    fullDescription:
-      "POCO M6 Pro 5G redefines what a sub-₹15,000 phone can do. The Snapdragon 4 Gen 2 processor is the fastest in this price range, paired with a 108MP camera that rivals phones twice its price.",
-    pros: [
-      "Snapdragon 4 Gen 2 — fastest in class",
-      "108MP high-resolution camera",
-      "FHD+ 120Hz smooth display",
-      "5000mAh with 33W fast charging",
-      "No ads in MIUI (POCO UI)",
-    ],
-    cons: [
-      "POCO UI still has some bloatware",
-      "Average ultrawide camera",
-      "No wireless charging",
-      "Glass back attracts fingerprints",
-    ],
-    specs: {
-      display: '6.79" FHD+ IPS LCD, 120Hz',
-      processor: "Snapdragon 4 Gen 2 (4nm)",
-      ram: "6GB / 8GB",
-      storage: "128GB / 256GB (expandable)",
-      battery: "5000mAh",
-      camera: "108MP + 8MP + 2MP",
-      os: "POCO UI 5, Android 13",
-      charging: "33W Turbo Charging",
-      network: "5G, 4G LTE, Wi-Fi 5",
-    },
-    affiliateLink: "https://www.amazon.in/dp/B0CJ6T135W",
-    category: ["under-15000", "5g", "camera"],
-    isAvailable: true,
-    publishedAt: "2024-02-01",
-    updatedAt: "2024-03-10",
+    shortDescription: "Chop vegetables in seconds with this sturdy steel hand-press chopper.",
+    fullDescription: "This compact vegetable chopper makes meal prep effortless. The sharp stainless steel blades cut onions, tomatoes, and more in seconds with a simple hand press. Easy to clean and durable.",
+    pros: ["Fast manual chopping", "Sharp stainless steel blades", "Easy to clean", "No electricity needed", "Compact storage"],
+    cons: ["Manual effort needed", "Small capacity", "Not for hard vegetables"],
+    specs: { Material: "Stainless Steel + ABS", Capacity: "500ml", Blades: "3 sharp blades", Warranty: "6 months", Use: "Onion, tomato, garlic" },
+    affiliateLink: "https://www.amazon.in/dp/EXAMPLE001",
+    category: ["under-500", "home-kitchen", "kitchen-appliances"],
+    isAvailable: true, publishedAt: "2026-06-01", updatedAt: "2026-06-21",
   },
   {
-    id: "4",
-    slug: "realme-narzo-70-pro-5g",
-    name: "Realme Narzo 70 Pro 5G",
-    brand: "Realme",
-    price: 19999,
-    originalPrice: 22999,
-    rating: 4.5,
-    reviewCount: 9870,
-    image: "https://placehold.co/400x400/16213e/ffffff?text=Narzo+70+Pro",
-    badge: "New",
-    shortDescription:
-      "Premium AMOLED display with MediaTek Dimensity 7050 and 67W SUPERVOOC charging.",
-    fullDescription:
-      "Realme Narzo 70 Pro 5G is a premium offering under ₹20,000 featuring a stunning AMOLED display and ultra-fast 67W charging. The Dimensity 7050 chipset ensures smooth gaming and multitasking.",
-    pros: [
-      "AMOLED display with 120Hz",
-      "67W SUPERVOOC fast charging",
-      "Dimensity 7050 excellent performance",
-      "Premium glass back design",
-      "Excellent low-light camera",
-    ],
-    cons: [
-      "Realme UI has some ads",
-      "No 3.5mm headphone jack",
-      "Average ultrawide camera",
-      "Heating during heavy gaming",
-    ],
-    specs: {
-      display: '6.7" FHD+ AMOLED, 120Hz, 950 nits',
-      processor: "MediaTek Dimensity 7050 (6nm)",
-      ram: "8GB / 12GB",
-      storage: "128GB / 256GB",
-      battery: "5000mAh",
-      camera: "50MP Sony IMX890 + 8MP + 2MP",
-      os: "Realme UI 5.0, Android 14",
-      charging: "67W SUPERVOOC",
-      network: "5G, 4G LTE, Wi-Fi 6",
-    },
-    affiliateLink: "https://www.amazon.in/dp/B0CHQKRVMQ",
-    category: ["under-20000", "5g", "camera"],
-    isAvailable: true,
-    publishedAt: "2024-02-15",
-    updatedAt: "2024-03-12",
+    id: "2", slug: "microfiber-cleaning-cloth-set", name: "Microfiber Cleaning Cloth Set (Pack of 6)", brand: "CleanMax",
+    price: 299, originalPrice: 599, rating: 4.4, reviewCount: 12300,
+    image: "https://placehold.co/400x400/10b981/ffffff?text=Cloth+Set",
+    badge: "Top Deal",
+    shortDescription: "Lint-free microfiber cloths for streak-free cleaning of any surface.",
+    fullDescription: "These ultra-absorbent microfiber cloths trap dust and dirt without scratching surfaces. Perfect for cars, kitchens, glass, and electronics. Reusable and machine washable.",
+    pros: ["Lint-free cleaning", "Highly absorbent", "Machine washable", "Multi-surface use", "Pack of 6 value"],
+    cons: ["Colors may fade", "Thin material"],
+    specs: { Material: "Microfiber", Quantity: "6 pieces", Size: "30x30 cm", Washable: "Yes", Use: "Car, kitchen, glass" },
+    affiliateLink: "https://www.amazon.in/dp/EXAMPLE002",
+    category: ["under-500", "home-kitchen", "car-accessories"],
+    isAvailable: true, publishedAt: "2026-06-02", updatedAt: "2026-06-21",
   },
   {
-    id: "5",
-    slug: "iqoo-z9-5g",
-    name: "iQOO Z9 5G",
-    brand: "iQOO",
-    price: 19999,
-    originalPrice: 23999,
-    rating: 4.6,
-    reviewCount: 7450,
-    image: "https://placehold.co/400x400/1b1b2f/ffffff?text=iQOO+Z9+5G",
-    badge: "Editor's Pick",
-    shortDescription:
-      "Snapdragon 7 Gen 3 performance beast with 144Hz AMOLED display.",
-    fullDescription:
-      "iQOO Z9 5G is perhaps the best value-for-money phone under ₹20,000 in 2024. It packs the Snapdragon 7 Gen 3 — a chip you'd find in last year's flagships — along with a 144Hz AMOLED panel.",
-    pros: [
-      "Snapdragon 7 Gen 3 — exceptional performance",
-      "144Hz AMOLED display",
-      "44W FlashCharge",
-      "Clean Funtouch OS",
-      "Excellent gaming performance",
-    ],
-    cons: [
-      "Funtouch OS has bloatware",
-      "Average low-light photos",
-      "No expandable storage",
-      "Limited colour options",
-    ],
-    specs: {
-      display: '6.67" FHD+ AMOLED, 144Hz, 2800 nits',
-      processor: "Snapdragon 7 Gen 3 (4nm)",
-      ram: "8GB / 12GB",
-      storage: "128GB / 256GB (UFS 3.1)",
-      battery: "5000mAh",
-      camera: "50MP + 2MP",
-      os: "Funtouch OS 14, Android 14",
-      charging: "44W FlashCharge",
-      network: "5G, 4G LTE, Wi-Fi 6",
-    },
-    affiliateLink: "https://www.amazon.in/dp/B07WHQLX7G",
-    category: ["under-20000", "5g", "gaming"],
-    isAvailable: true,
-    publishedAt: "2024-02-20",
-    updatedAt: "2024-03-15",
-  },
-  {
-    id: "6",
-    slug: "redmi-a3",
-    name: "Redmi A3",
-    brand: "Xiaomi",
-    price: 8499,
-    originalPrice: 10999,
-    rating: 4.0,
-    reviewCount: 11230,
-    image: "https://placehold.co/400x400/2c2c54/ffffff?text=Redmi+A3",
+    id: "3", slug: "usb-led-light", name: "Portable USB LED Light", brand: "GlowTech",
+    price: 149, originalPrice: 399, rating: 4.1, reviewCount: 5600,
+    image: "https://placehold.co/400x400/3b82f6/ffffff?text=USB+LED",
     badge: "Value Pick",
-    shortDescription:
-      "Ultra-budget 4G phone with clean design and large 5000mAh battery.",
-    fullDescription:
-      "Redmi A3 is Xiaomi's most affordable smartphone targeting first-time buyers and seniors. It offers a clean design, large display, and excellent battery life — all under ₹9,000.",
-    pros: [
-      "Under ₹9,000 price",
-      "5000mAh long-lasting battery",
-      "Clean IP52 dust/splash resistance",
-      "Smooth 90Hz display",
-      "18 months of security updates",
-    ],
-    cons: [
-      "4G only, no 5G",
-      "Mediatek Helio G36 — basic performance",
-      "8MP camera is average",
-      "10W slow charging only",
-    ],
-    specs: {
-      display: '6.71" HD+ IPS LCD, 90Hz',
-      processor: "MediaTek Helio G36 (12nm)",
-      ram: "3GB / 4GB",
-      storage: "64GB / 128GB (expandable)",
-      battery: "5000mAh",
-      camera: "8MP + AI lens",
-      os: "MIUI 14, Android 13",
-      charging: "10W Standard Charging",
-      network: "4G LTE, Wi-Fi 4",
-    },
-    affiliateLink: "https://www.amazon.in/dp/B0CV3BQ8DYs",
-    category: ["under-10000", "battery"],
-    isAvailable: true,
-    publishedAt: "2024-01-10",
-    updatedAt: "2024-02-28",
+    shortDescription: "Plug-and-play USB LED light for laptops, power banks, and night reading.",
+    fullDescription: "This flexible USB LED light plugs into any USB port to provide bright, eye-friendly light. Great for late-night work, reading, or as an emergency light during power cuts.",
+    pros: ["Plug and play", "Flexible neck", "Eye-friendly light", "Ultra portable", "Very affordable"],
+    cons: ["Needs USB power source", "Single brightness"],
+    specs: { Power: "USB 5V", Light: "LED warm white", Length: "Flexible 20cm", Use: "Laptop, power bank", Warranty: "3 months" },
+    affiliateLink: "https://www.amazon.in/dp/EXAMPLE003",
+    category: ["under-500", "tech-gadgets", "lifestyle-gadgets"],
+    isAvailable: true, publishedAt: "2026-06-03", updatedAt: "2026-06-21",
+  },
+
+  // ───── UNDER ₹1000 ─────
+  {
+    id: "4", slug: "wireless-mouse", name: "Wireless Optical Mouse", brand: "TechGrip",
+    price: 599, originalPrice: 1299, rating: 4.2, reviewCount: 9800,
+    image: "https://placehold.co/400x400/3b82f6/ffffff?text=Wireless+Mouse",
+    badge: "Best Seller",
+    shortDescription: "Smooth 2.4GHz wireless mouse with silent clicks and long battery life.",
+    fullDescription: "Enjoy clutter-free productivity with this ergonomic wireless mouse. The 2.4GHz connection is lag-free, and the silent click design is perfect for offices and shared spaces.",
+    pros: ["Lag-free 2.4GHz", "Silent clicks", "Ergonomic design", "Long battery life", "Plug-and-play USB receiver"],
+    cons: ["AA battery needed", "Not rechargeable"],
+    specs: { Connectivity: "2.4GHz Wireless", DPI: "1600", Battery: "1x AA", Range: "10 meters", Warranty: "1 year" },
+    affiliateLink: "https://www.amazon.in/dp/EXAMPLE004",
+    category: ["under-1000", "tech-gadgets"],
+    isAvailable: true, publishedAt: "2026-06-04", updatedAt: "2026-06-21",
+  },
+  {
+    id: "5", slug: "spice-rack-organizer", name: "Rotating Spice Rack Organizer", brand: "HomeNeat",
+    price: 899, originalPrice: 1499, rating: 4.5, reviewCount: 4300,
+    image: "https://placehold.co/400x400/10b981/ffffff?text=Spice+Rack",
+    badge: "Editor's Pick",
+    shortDescription: "360° rotating spice rack that keeps your kitchen counter tidy.",
+    fullDescription: "This rotating spice rack holds all your spices in one compact, accessible spot. The 360° spin makes finding the right spice quick and easy, decluttering your kitchen counter.",
+    pros: ["360° rotation", "Saves counter space", "Sturdy build", "Easy to assemble", "Modern look"],
+    cons: ["Jars not included", "Medium capacity"],
+    specs: { Material: "ABS Plastic", Tiers: "2 levels", Rotation: "360 degrees", Capacity: "16 jars", Use: "Kitchen counter" },
+    affiliateLink: "https://www.amazon.in/dp/EXAMPLE005",
+    category: ["under-1000", "home-organization", "kitchen-appliances"],
+    isAvailable: true, publishedAt: "2026-06-05", updatedAt: "2026-06-21",
+  },
+  {
+    id: "6", slug: "car-phone-holder", name: "Magnetic Car Phone Holder", brand: "DriveSafe",
+    price: 449, originalPrice: 999, rating: 4.3, reviewCount: 15600,
+    image: "https://placehold.co/400x400/64748b/ffffff?text=Car+Holder",
+    badge: "Trending",
+    shortDescription: "Strong magnetic dashboard mount for safe hands-free navigation.",
+    fullDescription: "Keep your phone secure and visible while driving with this strong magnetic car mount. The 360° rotation lets you view in any orientation, perfect for navigation and calls.",
+    pros: ["Strong magnetic hold", "360° rotation", "Easy installation", "Works with any phone", "Compact design"],
+    cons: ["Magnet plate needs sticking", "Not for thick cases"],
+    specs: { Mount: "Dashboard/Vent", Hold: "Magnetic", Rotation: "360 degrees", Compatible: "All phones", Warranty: "6 months" },
+    affiliateLink: "https://www.amazon.in/dp/EXAMPLE006",
+    category: ["under-1000", "car-accessories", "tech-gadgets"],
+    isAvailable: true, publishedAt: "2026-06-06", updatedAt: "2026-06-21",
+  },
+
+  // ───── UNDER ₹2000 ─────
+  {
+    id: "7", slug: "bluetooth-neckband", name: "Bluetooth Wireless Neckband", brand: "SoundPro",
+    price: 1299, originalPrice: 2499, rating: 4.2, reviewCount: 23400,
+    image: "https://placehold.co/400x400/3b82f6/ffffff?text=Neckband",
+    badge: "Best Seller",
+    shortDescription: "20-hour playback neckband with deep bass and fast charging.",
+    fullDescription: "Enjoy music on the go with this comfortable Bluetooth neckband. With 20 hours of playback, deep bass, and magnetic earbuds, it's perfect for workouts, commutes, and calls.",
+    pros: ["20-hour playback", "Deep bass sound", "Fast charging", "Magnetic earbuds", "IPX5 sweat resistant"],
+    cons: ["Average mic quality", "No ANC"],
+    specs: { Battery: "20 hours", Bluetooth: "5.3", Charging: "Fast USB-C", Resistance: "IPX5", Warranty: "1 year" },
+    affiliateLink: "https://www.amazon.in/dp/EXAMPLE007",
+    category: ["under-2000", "tech-gadgets", "lifestyle-gadgets"],
+    isAvailable: true, publishedAt: "2026-06-07", updatedAt: "2026-06-21",
+  },
+  {
+    id: "8", slug: "electric-handheld-blender", name: "Electric Handheld Blender", brand: "MixMaster",
+    price: 1499, originalPrice: 2999, rating: 4.4, reviewCount: 6700,
+    image: "https://placehold.co/400x400/ef4444/ffffff?text=Hand+Blender",
+    badge: "Editor's Pick",
+    shortDescription: "Powerful 250W handheld blender for smoothies, soups, and purees.",
+    fullDescription: "This versatile handheld blender makes smoothies, soups, and baby food in seconds. The 250W motor and stainless steel blades blend smoothly, and it's easy to clean and store.",
+    pros: ["Powerful 250W motor", "Stainless steel blades", "Easy to clean", "Compact storage", "Multi-use"],
+    cons: ["Corded design", "Can heat up on long use"],
+    specs: { Power: "250W", Blades: "Stainless Steel", Speed: "2 speeds", Use: "Smoothies, soups", Warranty: "1 year" },
+    affiliateLink: "https://www.amazon.in/dp/EXAMPLE008",
+    category: ["under-2000", "kitchen-appliances", "home-kitchen"],
+    isAvailable: true, publishedAt: "2026-06-08", updatedAt: "2026-06-21",
+  },
+  {
+    id: "9", slug: "smart-led-bulb", name: "WiFi Smart LED Bulb", brand: "SmartGlow",
+    price: 799, originalPrice: 1499, rating: 4.3, reviewCount: 11200,
+    image: "https://placehold.co/400x400/8b5cf6/ffffff?text=Smart+Bulb",
+    badge: "Trending",
+    shortDescription: "16 million colors, voice control with Alexa and Google Home.",
+    fullDescription: "Transform any room with this WiFi smart bulb. Control 16 million colors from your phone, set schedules, and use voice commands via Alexa or Google Home. No hub required.",
+    pros: ["16 million colors", "Alexa & Google voice", "App scheduling", "No hub needed", "Energy efficient"],
+    cons: ["Needs 2.4GHz WiFi", "Single bulb"],
+    specs: { Power: "9W", Colors: "16 million", Control: "App + Voice", WiFi: "2.4GHz", Warranty: "1 year" },
+    affiliateLink: "https://www.amazon.in/dp/EXAMPLE009",
+    category: ["under-2000", "smart-home", "tech-gadgets"],
+    isAvailable: true, publishedAt: "2026-06-09", updatedAt: "2026-06-21",
+  },
+
+  // ───── UNDER ₹5000 ─────
+  {
+    id: "10", slug: "smart-watch", name: "Fitness Smart Watch", brand: "FitPulse",
+    price: 2999, originalPrice: 5999, rating: 4.1, reviewCount: 34500,
+    image: "https://placehold.co/400x400/3b82f6/ffffff?text=Smart+Watch",
+    badge: "Best Seller",
+    shortDescription: "AMOLED display smartwatch with SpO2, heart rate, and Bluetooth calling.",
+    fullDescription: "Track your fitness goals with this feature-packed smartwatch. The AMOLED display, heart rate monitor, SpO2 tracking, and Bluetooth calling keep you connected and healthy all day.",
+    pros: ["AMOLED display", "Bluetooth calling", "SpO2 & heart rate", "7-day battery", "100+ sports modes"],
+    cons: ["No built-in GPS", "Basic app ecosystem"],
+    specs: { Display: "1.43\" AMOLED", Battery: "7 days", Calling: "Bluetooth", Tracking: "Heart, SpO2, Sleep", Warranty: "1 year" },
+    affiliateLink: "https://www.amazon.in/dp/EXAMPLE010",
+    category: ["under-5000", "tech-gadgets", "lifestyle-gadgets"],
+    isAvailable: true, publishedAt: "2026-06-10", updatedAt: "2026-06-21",
+  },
+  {
+    id: "11", slug: "electric-kettle", name: "Stainless Steel Electric Kettle", brand: "BoilPro",
+    price: 1199, originalPrice: 2199, rating: 4.5, reviewCount: 18900,
+    image: "https://placehold.co/400x400/ef4444/ffffff?text=Electric+Kettle",
+    badge: "Editor's Pick",
+    shortDescription: "1.5L fast-boil kettle with auto shut-off and boil-dry protection.",
+    fullDescription: "Boil water in minutes with this 1500W electric kettle. The stainless steel body, auto shut-off, and boil-dry protection make it safe and durable for daily tea, coffee, and noodles.",
+    pros: ["Fast 1500W boiling", "Auto shut-off", "Boil-dry protection", "1.5L capacity", "Stainless steel"],
+    cons: ["Body gets hot", "No temperature control"],
+    specs: { Power: "1500W", Capacity: "1.5 Litre", Body: "Stainless Steel", Safety: "Auto shut-off", Warranty: "1 year" },
+    affiliateLink: "https://www.amazon.in/dp/EXAMPLE011",
+    category: ["under-5000", "kitchen-appliances", "home-kitchen"],
+    isAvailable: true, publishedAt: "2026-06-11", updatedAt: "2026-06-21",
+  },
+  {
+    id: "12", slug: "smart-door-lock", name: "Smart Fingerprint Door Lock", brand: "SecureHome",
+    price: 4499, originalPrice: 7999, rating: 4.2, reviewCount: 3400,
+    image: "https://placehold.co/400x400/8b5cf6/ffffff?text=Smart+Lock",
+    badge: "New",
+    shortDescription: "Keyless entry with fingerprint, PIN, and app unlock for your home.",
+    fullDescription: "Upgrade your home security with this smart fingerprint door lock. Unlock with fingerprint, PIN code, RFID card, or smartphone app. Stores up to 100 fingerprints with anti-theft alarm.",
+    pros: ["Fingerprint + PIN + app", "100 fingerprint storage", "Anti-theft alarm", "Easy installation", "Low battery alert"],
+    cons: ["Needs battery backup", "Professional install advised"],
+    specs: { Unlock: "Fingerprint/PIN/App/Card", Storage: "100 fingerprints", Battery: "AA x4", Alarm: "Anti-theft", Warranty: "1 year" },
+    affiliateLink: "https://www.amazon.in/dp/EXAMPLE012",
+    category: ["under-5000", "smart-home", "home-kitchen"],
+    isAvailable: true, publishedAt: "2026-06-12", updatedAt: "2026-06-21",
+  },
+
+  // ───── UNDER ₹10000 ─────
+  {
+    id: "13", slug: "robot-vacuum-cleaner", name: "Smart Robot Vacuum Cleaner", brand: "CleanBot",
+    price: 8999, originalPrice: 14999, rating: 4.0, reviewCount: 5600,
+    image: "https://placehold.co/400x400/8b5cf6/ffffff?text=Robot+Vacuum",
+    badge: "Editor's Pick",
+    shortDescription: "App-controlled robot vacuum with smart mapping and auto charging.",
+    fullDescription: "Let this smart robot vacuum handle your floor cleaning. With app control, smart mapping, scheduled cleaning, and auto-return charging, your home stays spotless without lifting a finger.",
+    pros: ["Smart app mapping", "Scheduled cleaning", "Auto-return charging", "Slim design for under furniture", "Strong suction"],
+    cons: ["Small dustbin", "Struggles on thick carpets"],
+    specs: { Suction: "2700Pa", Battery: "120 min runtime", Control: "App + Voice", Charging: "Auto-return", Warranty: "1 year" },
+    affiliateLink: "https://www.amazon.in/dp/EXAMPLE013",
+    category: ["under-10000", "smart-home", "home-kitchen"],
+    isAvailable: true, publishedAt: "2026-06-13", updatedAt: "2026-06-21",
+  },
+  {
+    id: "14", slug: "air-fryer", name: "4.5L Digital Air Fryer", brand: "CrispChef",
+    price: 4999, originalPrice: 8999, rating: 4.4, reviewCount: 21300,
+    image: "https://placehold.co/400x400/ef4444/ffffff?text=Air+Fryer",
+    badge: "Best Seller",
+    shortDescription: "Oil-free air fryer with 8 presets for healthy, crispy cooking.",
+    fullDescription: "Cook healthier meals with up to 90% less oil using this 4.5L digital air fryer. The 8 cooking presets, digital touch panel, and rapid air technology make crispy fries, chicken, and more.",
+    pros: ["90% less oil cooking", "8 digital presets", "4.5L family size", "Easy-clean basket", "Rapid air tech"],
+    cons: ["Bulky on counter", "Loud fan"],
+    specs: { Capacity: "4.5 Litre", Power: "1400W", Presets: "8 modes", Control: "Digital touch", Warranty: "1 year" },
+    affiliateLink: "https://www.amazon.in/dp/EXAMPLE014",
+    category: ["under-10000", "kitchen-appliances", "home-kitchen"],
+    isAvailable: true, publishedAt: "2026-06-14", updatedAt: "2026-06-21",
+  },
+  {
+    id: "15", slug: "wireless-earbuds-anc", name: "ANC Wireless Earbuds", brand: "SoundPro",
+    price: 5999, originalPrice: 9999, rating: 4.3, reviewCount: 14200,
+    image: "https://placehold.co/400x400/3b82f6/ffffff?text=ANC+Earbuds",
+    badge: "Trending",
+    shortDescription: "Active noise cancelling earbuds with 40-hour total playback.",
+    fullDescription: "Immerse yourself in music with these ANC wireless earbuds. Active noise cancellation, 40-hour total battery with case, and crystal-clear calls make them perfect for travel and work.",
+    pros: ["Active noise cancelling", "40-hour total battery", "Crystal-clear calls", "Fast charging", "Comfortable fit"],
+    cons: ["ANC drains battery faster", "Touch controls sensitive"],
+    specs: { ANC: "Yes", Battery: "40 hours total", Bluetooth: "5.3", Charging: "USB-C fast", Warranty: "1 year" },
+    affiliateLink: "https://www.amazon.in/dp/EXAMPLE015",
+    category: ["under-10000", "tech-gadgets", "lifestyle-gadgets"],
+    isAvailable: true, publishedAt: "2026-06-15", updatedAt: "2026-06-21",
+  },
+
+  // ───── UNDER ₹20000 ─────
+  {
+    id: "16", slug: "microwave-oven", name: "28L Convection Microwave Oven", brand: "CookWell",
+    price: 12999, originalPrice: 18999, rating: 4.3, reviewCount: 8900,
+    image: "https://placehold.co/400x400/ef4444/ffffff?text=Microwave",
+    badge: "Editor's Pick",
+    shortDescription: "28L convection microwave with grill and 100+ auto-cook menus.",
+    fullDescription: "This versatile 28L convection microwave bakes, grills, and reheats with ease. With 100+ auto-cook menus and a stainless steel cavity, it handles everything from pizzas to cakes.",
+    pros: ["28L large capacity", "Convection + grill", "100+ auto menus", "Stainless steel cavity", "Child lock safety"],
+    cons: ["Heavy unit", "Learning curve for menus"],
+    specs: { Capacity: "28 Litre", Type: "Convection + Grill", Menus: "100+ auto-cook", Cavity: "Stainless Steel", Warranty: "1 year + 3 yr magnetron" },
+    affiliateLink: "https://www.amazon.in/dp/EXAMPLE016",
+    category: ["under-20000", "kitchen-appliances", "home-kitchen"],
+    isAvailable: true, publishedAt: "2026-06-16", updatedAt: "2026-06-21",
+  },
+  {
+    id: "17", slug: "smart-tv-32", name: "32-inch HD Smart LED TV", brand: "ViewMax",
+    price: 11999, originalPrice: 17999, rating: 4.2, reviewCount: 27600,
+    image: "https://placehold.co/400x400/3b82f6/ffffff?text=Smart+TV",
+    badge: "Best Seller",
+    shortDescription: "HD Ready smart TV with built-in apps and voice remote.",
+    fullDescription: "Enjoy your favorite shows on this 32-inch HD smart LED TV. With built-in streaming apps, a voice remote, and crisp HD picture quality, it's the perfect entertainment hub for any room.",
+    pros: ["HD Ready display", "Built-in streaming apps", "Voice remote", "Multiple ports", "Compact size"],
+    cons: ["HD not Full HD", "Average built-in speakers"],
+    specs: { Display: "32\" HD Ready", Resolution: "1366x768", OS: "Smart with apps", Ports: "2 HDMI, 2 USB", Warranty: "1 year" },
+    affiliateLink: "https://www.amazon.in/dp/EXAMPLE017",
+    category: ["under-20000", "tech-gadgets", "smart-home"],
+    isAvailable: true, publishedAt: "2026-06-17", updatedAt: "2026-06-21",
+  },
+  {
+    id: "18", slug: "car-dash-camera", name: "Full HD Car Dash Camera", brand: "DriveSafe",
+    price: 5499, originalPrice: 9999, rating: 4.1, reviewCount: 4500,
+    image: "https://placehold.co/400x400/64748b/ffffff?text=Dash+Cam",
+    badge: "New",
+    shortDescription: "1080p dash cam with night vision and G-sensor crash detection.",
+    fullDescription: "Protect yourself on the road with this Full HD dash camera. It records 1080p footage with night vision, loop recording, and G-sensor that auto-saves footage during sudden impacts.",
+    pros: ["1080p Full HD recording", "Night vision", "G-sensor crash detect", "Loop recording", "Wide 170° angle"],
+    cons: ["SD card not included", "Wiring setup needed"],
+    specs: { Resolution: "1080p Full HD", Angle: "170 degrees", Night: "Yes", Sensor: "G-sensor", Warranty: "1 year" },
+    affiliateLink: "https://www.amazon.in/dp/EXAMPLE018",
+    category: ["under-20000", "car-accessories", "tech-gadgets"],
+    isAvailable: true, publishedAt: "2026-06-18", updatedAt: "2026-06-21",
   },
 ];
 
+// ── Price-based budget categories ──
 export const budgetCategories: BudgetCategory[] = [
-  {
-    label: "Under ₹10,000",
-    slug: "under-10000",
-    maxPrice: 10000,
-    description: "Best budget smartphones that don't compromise on essentials",
-    icon: "💰",
-  },
-  {
-    label: "Under ₹15,000",
-    slug: "under-15000",
-    maxPrice: 15000,
-    description: "Mid-range value picks with 5G and better cameras",
-    icon: "📱",
-  },
-  {
-    label: "Under ₹20,000",
-    slug: "under-20000",
-    maxPrice: 20000,
-    description: "Near-premium experience without the flagship price tag",
-    icon: "🚀",
-  },
+  { label: "Under ₹500", slug: "under-500", maxPrice: 500, description: "Smart picks that cost less than a movie ticket", icon: "🪙" },
+  { label: "Under ₹1000", slug: "under-1000", maxPrice: 1000, description: "Everyday essentials under a thousand", icon: "💵" },
+  { label: "Under ₹2000", slug: "under-2000", maxPrice: 2000, description: "Great value gadgets and home helpers", icon: "💰" },
+  { label: "Under ₹5000", slug: "under-5000", maxPrice: 5000, description: "Premium picks without the premium price", icon: "💎" },
+  { label: "Under ₹10000", slug: "under-10000", maxPrice: 10000, description: "Upgrade your home and tech setup", icon: "🚀" },
+  { label: "Under ₹20000", slug: "under-20000", maxPrice: 20000, description: "Top-tier appliances and gadgets", icon: "👑" },
 ];
 
+// ── Helper functions (same names kept for compatibility) ──
 export function getPhonesByCategory(category: string): Phone[] {
-  return phones.filter((p) => p.category.includes(category as never));
+  return phones.filter((p) => p.category.includes(category));
+}
+
+export function getProductsByCategory(category: string): Phone[] {
+  return phones.filter((p) => p.category.includes(category));
 }
 
 export function getPhoneBySlug(slug: string): Phone | undefined {
@@ -307,10 +304,7 @@ export function getPhoneBySlug(slug: string): Phone | undefined {
 
 export function getLatestPhones(count = 6): Phone[] {
   return [...phones]
-    .sort(
-      (a, b) =>
-        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
-    )
+    .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
     .slice(0, count);
 }
 
@@ -320,10 +314,26 @@ export function searchPhones(query: string): Phone[] {
     (p) =>
       p.name.toLowerCase().includes(q) ||
       p.brand.toLowerCase().includes(q) ||
-      p.shortDescription.toLowerCase().includes(q)
+      p.shortDescription.toLowerCase().includes(q) ||
+      p.category.some((c) => c.toLowerCase().includes(q))
   );
 }
 
 export function getFeaturedPhones(): Phone[] {
   return phones.filter((p) => p.badge === "Editor's Pick" || p.badge === "Best Seller");
+}
+
+export function getTrendingProducts(count = 4): Phone[] {
+  return phones.filter((p) => p.badge === "Trending" || p.badge === "Best Seller").slice(0, count);
+}
+
+export function getTopDeals(count = 4): Phone[] {
+  return [...phones]
+    .filter((p) => p.originalPrice)
+    .sort((a, b) => {
+      const discA = ((a.originalPrice! - a.price) / a.originalPrice!) * 100;
+      const discB = ((b.originalPrice! - b.price) / b.originalPrice!) * 100;
+      return discB - discA;
+    })
+    .slice(0, count);
 }

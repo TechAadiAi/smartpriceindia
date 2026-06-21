@@ -66,31 +66,21 @@ export default async function ComparePage({ searchParams }: Props) {
   const priceWin = winner(phoneA.price, phoneB.price, false); // lower is better
   const ratingWin = winner(phoneA.rating, phoneB.rating);
 
-  const specRows: {
-    label: string;
-    a: string;
-    b: string;
-    compare?: WinnerKey;
-  }[] = [
-    { label: "Display", a: phoneA.specs.display, b: phoneB.specs.display },
-    { label: "Processor", a: phoneA.specs.processor, b: phoneB.specs.processor },
-    { label: "RAM", a: phoneA.specs.ram, b: phoneB.specs.ram },
-    { label: "Storage", a: phoneA.specs.storage, b: phoneB.specs.storage },
-    { label: "Battery", a: phoneA.specs.battery, b: phoneB.specs.battery },
-    { label: "Camera", a: phoneA.specs.camera, b: phoneB.specs.camera },
-    { label: "OS", a: phoneA.specs.os, b: phoneB.specs.os },
-    { label: "Charging", a: phoneA.specs.charging, b: phoneB.specs.charging },
-    ...(phoneA.specs.network || phoneB.specs.network
-      ? [{ label: "Network", a: phoneA.specs.network ?? "—", b: phoneB.specs.network ?? "—" }]
-      : []),
-  ];
+  const allKeys = Array.from(
+    new Set([...Object.keys(phoneA.specs), ...Object.keys(phoneB.specs)])
+  );
+  const specRows: { label: string; a: string; b: string }[] = allKeys.map((k) => ({
+    label: k.charAt(0).toUpperCase() + k.slice(1),
+    a: phoneA.specs[k] ?? "—",
+    b: phoneB.specs[k] ?? "—",
+  }));
 
   return (
     <PageLayout>
       {/* Back */}
       <Link
         href="/latest"
-        className="inline-flex items-center gap-1 text-sm text-slate-500 hover:text-blue-600 dark:hover:text-blue-400 mb-6 transition-colors"
+        className="inline-flex items-center gap-1 text-sm text-slate-500 hover:text-orange-600 dark:hover:text-orange-400 mb-6 transition-colors"
       >
         <ChevronLeft size={15} /> Back to phones
       </Link>
@@ -108,7 +98,7 @@ export default async function ComparePage({ searchParams }: Props) {
             key={phone.id}
             className={`bg-white dark:bg-gray-900 border rounded-2xl p-5 text-center ${
               idx === 0
-                ? "border-blue-300 dark:border-blue-700"
+                ? "border-orange-300 dark:border-orange-700"
                 : "border-slate-200 dark:border-gray-800"
             }`}
           >
@@ -124,7 +114,7 @@ export default async function ComparePage({ searchParams }: Props) {
               height={140}
               className="mx-auto object-contain mb-4"
             />
-            <p className="text-xs text-blue-600 dark:text-blue-400 font-medium">
+            <p className="text-xs text-orange-600 dark:text-orange-400 font-medium">
               {phone.brand}
             </p>
             <h2 className="text-sm md:text-base font-bold text-slate-900 dark:text-white leading-tight mt-0.5">
@@ -179,7 +169,7 @@ export default async function ComparePage({ searchParams }: Props) {
           <div className="px-4 py-3 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wide">
             Spec
           </div>
-          <div className="px-4 py-3 text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wide text-center truncate">
+          <div className="px-4 py-3 text-xs font-bold text-orange-600 dark:text-orange-400 uppercase tracking-wide text-center truncate">
             {phoneA.name}
           </div>
           <div className="px-4 py-3 text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wide text-center truncate">
@@ -285,7 +275,7 @@ export default async function ComparePage({ searchParams }: Props) {
             <Link
               key={phone.id}
               href={`/phones/${phone.slug}`}
-              className="text-sm font-semibold text-blue-600 dark:text-blue-400 hover:underline"
+              className="text-sm font-semibold text-orange-600 dark:text-orange-400 hover:underline"
             >
               Read full {phone.name} review →
             </Link>

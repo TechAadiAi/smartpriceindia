@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const phone = getPhoneBySlug(slug);
   if (!phone) return {};
   return {
-    title: `${phone.name} Review, Price & Full Specs in India`,
+    title: `${phone.name} Review, Price & Features in India`,
     description: phone.shortDescription,
     openGraph: {
       title: `${phone.name} Review | SmartPriceIndia`,
@@ -37,10 +37,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const specIcons: Record<string, React.ReactNode> = {
-  display: <Monitor size={15} />,
-  processor: <Cpu size={15} />,
-  battery: <Battery size={15} />,
-  camera: <Camera size={15} />,
+  Material: <Monitor size={15} />,
+  Power: <Cpu size={15} />,
+  Battery: <Battery size={15} />,
+  Capacity: <Camera size={15} />,
 };
 
 export default async function PhoneReviewPage({ params }: Props) {
@@ -61,9 +61,9 @@ export default async function PhoneReviewPage({ params }: Props) {
       <PageLayout>
         {/* Breadcrumb */}
         <nav className="flex items-center gap-1.5 text-sm text-slate-500 dark:text-slate-400 mb-6 flex-wrap">
-          <Link href="/" className="hover:text-blue-600 dark:hover:text-blue-400">Home</Link>
+          <Link href="/" className="hover:text-orange-600 dark:hover:text-orange-400">Home</Link>
           <ChevronRight size={14} />
-          <Link href="/latest" className="hover:text-blue-600 dark:hover:text-blue-400">Phones</Link>
+          <Link href="/latest" className="hover:text-orange-600 dark:hover:text-orange-400">Phones</Link>
           <ChevronRight size={14} />
           <span className="text-slate-900 dark:text-white font-medium truncate max-w-[200px]">{phone.name}</span>
         </nav>
@@ -134,7 +134,7 @@ export default async function PhoneReviewPage({ params }: Props) {
           <div className="lg:col-span-2 space-y-8">
             <div>
               <div className="flex items-center gap-2 flex-wrap mb-1">
-                <span className="text-blue-600 dark:text-blue-400 font-semibold">{phone.brand}</span>
+                <span className="text-orange-600 dark:text-orange-400 font-semibold">{phone.brand}</span>
                 {phone.badge && <Badge label={phone.badge} />}
               </div>
               <h1 className="text-2xl md:text-3xl font-extrabold text-slate-900 dark:text-white leading-tight">
@@ -168,7 +168,7 @@ export default async function PhoneReviewPage({ params }: Props) {
               </div>
             </div>
 
-            <div className="bg-blue-50 dark:bg-blue-950/30 border border-blue-100 dark:border-blue-900 rounded-xl p-5">
+            <div className="bg-orange-50 dark:bg-orange-950/30 border border-orange-100 dark:border-orange-900 rounded-xl p-5">
               <h2 className="font-bold text-slate-900 dark:text-white mb-2">Our Verdict</h2>
               <p className="text-slate-700 dark:text-slate-300 leading-relaxed">{phone.fullDescription}</p>
             </div>
@@ -205,7 +205,7 @@ export default async function PhoneReviewPage({ params }: Props) {
 
             {/* Specs Table */}
             <div>
-              <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-4">Full Specifications</h2>
+              <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-4">Specifications</h2>
               <div className="bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-800 rounded-xl overflow-hidden">
                 {specEntries.map(([key, value], i) => (
                   <div

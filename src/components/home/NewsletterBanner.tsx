@@ -48,7 +48,7 @@ export default function NewsletterBanner() {
   }
 
   return (
-    <div className="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl p-8 text-white">
+    <div className="bg-gradient-to-r from-orange-500 to-amber-600 rounded-2xl p-8 text-white">
       <div className="max-w-2xl mx-auto text-center">
         <div className="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
           <Bell size={22} />
@@ -56,7 +56,7 @@ export default function NewsletterBanner() {
         <h2 className="text-2xl font-extrabold mb-2">
           Get Price Drop Alerts
         </h2>
-        <p className="text-blue-100 mb-6 text-sm leading-relaxed">
+        <p className="text-orange-50 mb-6 text-sm leading-relaxed">
           Be the first to know when your dream phone goes on sale. We send
           weekly deal digests — no spam, unsubscribe any time.
         </p>
@@ -76,7 +76,7 @@ export default function NewsletterBanner() {
           <button
             type="submit"
             disabled={status === "loading"}
-            className="inline-flex items-center justify-center gap-2 bg-white text-blue-700 hover:bg-blue-50 font-bold px-6 py-3 rounded-xl transition-colors text-sm disabled:opacity-70 flex-shrink-0"
+            className="inline-flex items-center justify-center gap-2 bg-white text-orange-600 hover:bg-orange-50 font-bold px-6 py-3 rounded-xl transition-colors text-sm disabled:opacity-70 flex-shrink-0"
           >
             {status === "loading" ? (
               "Subscribing…"
@@ -94,7 +94,7 @@ export default function NewsletterBanner() {
           </p>
         )}
 
-        <p className="text-blue-200 text-xs mt-4">
+        <p className="text-orange-100 text-xs mt-4">
           📧 Join 12,000+ Indian smartphone buyers. No spam ever.
         </p>
       </div>

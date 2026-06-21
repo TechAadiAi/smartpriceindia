@@ -16,7 +16,7 @@ export default function PhoneCard({ phone }: PhoneCardProps) {
     : null;
 
   return (
-    <div className="group bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-800 rounded-xl overflow-hidden hover:shadow-lg hover:border-blue-200 dark:hover:border-blue-900 transition-all duration-200">
+    <div className="group bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-800 rounded-xl overflow-hidden hover:shadow-lg hover:border-orange-200 dark:hover:border-orange-900 transition-all duration-200">
       {/* Image */}
       <Link href={`/phones/${phone.slug}`}>
         <div className="relative bg-slate-50 dark:bg-gray-800 p-4 flex items-center justify-center h-48 overflow-hidden">
@@ -44,11 +44,11 @@ export default function PhoneCard({ phone }: PhoneCardProps) {
 
       {/* Info */}
       <div className="p-4">
-        <p className="text-xs text-blue-600 dark:text-blue-400 font-medium mb-1">
+        <p className="text-xs text-orange-600 dark:text-orange-400 font-medium mb-1">
           {phone.brand}
         </p>
         <Link href={`/phones/${phone.slug}`}>
-          <h3 className="font-semibold text-slate-900 dark:text-white text-sm leading-tight hover:text-blue-600 dark:hover:text-blue-400 transition-colors line-clamp-2">
+          <h3 className="font-semibold text-slate-900 dark:text-white text-sm leading-tight hover:text-orange-600 dark:hover:text-orange-400 transition-colors line-clamp-2">
             {phone.name}
           </h3>
         </Link>

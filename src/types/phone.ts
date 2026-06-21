@@ -1,13 +1,6 @@
+// Flexible specs - works for any gadget/product (key-value pairs)
 export interface PhoneSpecs {
-  display: string;
-  processor: string;
-  ram: string;
-  storage: string;
-  battery: string;
-  camera: string;
-  os: string;
-  charging: string;
-  network?: string;
+  [key: string]: string | undefined;
 }
 
 export interface Phone {
@@ -21,29 +14,20 @@ export interface Phone {
   reviewCount: number;
   image: string;
   images?: string[];
-  badge?: "Best Seller" | "Editor's Pick" | "New" | "Budget King" | "Value Pick";
+  badge?: "Best Seller" | "Editor's Pick" | "New" | "Budget King" | "Value Pick" | "Trending" | "Top Deal";
   shortDescription: string;
   fullDescription: string;
   pros: string[];
   cons: string[];
   specs: PhoneSpecs;
   affiliateLink: string;
-  category: PhoneCategory[];
+  category: string[];
   isAvailable: boolean;
   publishedAt: string;
   updatedAt: string;
 }
 
-export type PhoneCategory =
-  | "under-10000"
-  | "under-15000"
-  | "under-20000"
-  | "under-30000"
-  | "flagship"
-  | "5g"
-  | "gaming"
-  | "camera"
-  | "battery";
+export type PhoneCategory = string;
 
 export interface BudgetCategory {
   label: string;
@@ -51,4 +35,13 @@ export interface BudgetCategory {
   maxPrice: number;
   description: string;
   icon: string;
+}
+
+// Product categories for the gadget/home niche
+export interface ProductCategory {
+  label: string;
+  slug: string;
+  description: string;
+  icon: string;
+  color: string;
 }

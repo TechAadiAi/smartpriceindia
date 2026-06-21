@@ -39,7 +39,7 @@ export default function SearchBar({
         onChange={(e) => setQuery(e.target.value)}
         placeholder={placeholder}
         className={cn(
-          "w-full bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-700 rounded-xl text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all",
+          "w-full bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-700 rounded-xl text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all",
           size === "lg" && "pl-12 pr-10 py-4 text-base",
           size === "md" && "pl-10 pr-8 py-2.5 text-sm",
           size === "sm" && "pl-9 pr-7 py-1.5 text-sm"

@@ -13,20 +13,20 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "SmartPriceIndia – Best Smartphone Reviews & Prices in India",
+    default: "SmartPriceIndia – Best Gadget & Home Product Reviews in India",
     template: "%s | SmartPriceIndia",
   },
   description:
-    "Find the best smartphones in India. Expert reviews, price comparisons, and buying guides for phones under ₹10,000, ₹15,000, and ₹20,000.",
+    "Find the best gadgets and home products in India. Expert reviews, price comparisons, and buying guides for every budget.",
   keywords: [
-    "best phones India 2024",
-    "smartphone reviews India",
-    "budget phones India",
-    "phones under 10000",
-    "phones under 15000",
-    "phones under 20000",
-    "5G phones India",
-    "best camera phone India",
+    "best gadgets India",
+    "home kitchen products India",
+    "tech gadgets India",
+    "products under 500",
+    "products under 1000",
+    "products under 2000",
+    "smart home devices India",
+    "kitchen appliances India",
   ],
   authors: [{ name: "SmartPriceIndia Team" }],
   creator: "SmartPriceIndia",
@@ -39,17 +39,17 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://smartpriceindia.in",
     siteName: "SmartPriceIndia",
-    title: "SmartPriceIndia – Best Smartphone Reviews & Prices in India",
+    title: "SmartPriceIndia – Best Gadget & Home Product Reviews in India",
     description:
-      "Expert smartphone reviews, price comparisons, and buying guides for Indian consumers.",
+      "Expert gadget and home product reviews and buying guides for Indian shoppers.",
     images: [
       { url: "/og-image.png", width: 1200, height: 630, alt: "SmartPriceIndia" },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "SmartPriceIndia – Best Smartphone Reviews & Prices in India",
-    description: "Expert smartphone reviews and buying guides for India.",
+    title: "SmartPriceIndia – Best Gadget & Home Product Reviews in India",
+    description: "Expert gadget and home product reviews for India.",
     images: ["/og-image.png"],
     creator: "@SmartPriceIN",
   },

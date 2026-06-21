@@ -20,7 +20,7 @@ export default function ScrollToTop() {
       onClick={scrollUp}
       aria-label="Scroll to top"
       className={cn(
-        "fixed bottom-20 right-5 z-40 w-10 h-10 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300",
+        "fixed bottom-20 right-5 z-40 w-10 h-10 bg-orange-500 hover:bg-orange-600 text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300",
         visible
           ? "opacity-100 translate-y-0"
           : "opacity-0 translate-y-4 pointer-events-none"

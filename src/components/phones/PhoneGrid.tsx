@@ -25,10 +25,10 @@ const SORT_OPTIONS: { value: SortOption; label: string }[] = [
 
 const FILTER_TAGS: { value: FilterTag; label: string }[] = [
   { value: "all", label: "All" },
-  { value: "5g", label: "5G" },
-  { value: "camera", label: "Best Camera" },
-  { value: "battery", label: "Long Battery" },
-  { value: "gaming", label: "Gaming" },
+  { value: "tech-gadgets", label: "Tech Gadgets" },
+  { value: "home-kitchen", label: "Home & Kitchen" },
+  { value: "smart-home", label: "Smart Home" },
+  { value: "kitchen-appliances", label: "Appliances" },
 ];
 
 export default function PhoneGrid({
@@ -94,7 +94,7 @@ export default function PhoneGrid({
                 className={cn(
                   "px-3 py-1.5 rounded-full text-xs font-semibold transition-colors",
                   activeTag === tag.value
-                    ? "bg-blue-600 text-white"
+                    ? "bg-orange-500 text-white"
                     : "bg-slate-100 dark:bg-gray-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-gray-700"
                 )}
               >

@@ -5,23 +5,16 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 import { getLatestPhones } from "@/lib/phones";
 
 export const metadata: Metadata = {
-  title: "Latest Smartphones in India 2024",
-  description:
-    "Explore the newest smartphones launched in India. Expert reviews with prices, specs, and Amazon buying links.",
+  title: "Latest Product Reviews",
+  description: "Explore the newest home, kitchen and tech gadget reviews. Updated for 2026.",
 };
 
 export default function LatestPage() {
-  const phones = getLatestPhones(20);
-
+  const products = getLatestPhones(50);
   return (
     <PageLayout>
-      <Breadcrumb items={[{ label: "Latest Smartphones" }]} />
-      <PhoneGrid
-        phones={phones}
-        title="Latest Smartphones in India"
-        subtitle="The newest phones reviewed and updated for 2024 — sorted by launch date."
-        showFilters
-      />
+      <Breadcrumb items={[{ label: "Latest Reviews" }]} />
+      <PhoneGrid phones={products} title="Latest Product Reviews" subtitle="The newest products reviewed and updated for 2026." showFilters />
     </PageLayout>
   );
 }
