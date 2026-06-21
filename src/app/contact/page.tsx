@@ -4,7 +4,7 @@ import { Mail, Youtube, Instagram } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact Us – SmartPriceIndia",
-  description: "Get in touch with the SmartPriceIndia team for reviews, partnerships, or feedback.",
+  description: "Get in touch with the SmartPriceIndia team.",
 };
 
 export default function ContactPage() {
@@ -15,58 +15,57 @@ export default function ContactPage() {
           Contact Us
         </h1>
         <p className="text-slate-500 dark:text-slate-400 mb-8">
-          Have a question, suggestion, or partnership inquiry? We&apos;d love to hear from you.
+          Have a question or partnership inquiry? We&apos;d love to hear from you.
         </p>
 
         <div className="grid sm:grid-cols-3 gap-4 mb-10">
-          {[
-            {
-              icon: <Mail size={20} />,
-              label: "Email",
-              value: "smartpriceindiaofficial@gmail.com",
-              href: "mailto:smartpriceindiaofficial@gmail.com"
-            },
-            {
-              icon: <Instagram size={20} />,
-              label: "Instagram",
-              value: "@smartpriceindia",
-              href: "https://instagram.com/smartpriceindia"
-            },
-            {
-              icon: <Youtube size={20} />,
-              label: "YouTube",
-              value: "SmartPriceIndia",
-              href: "https://www.youtube.com/@SmartPriceIndiaOfficial"
-            },
-          ].map((item) => (
-            
-              key={item.label}
-              href={item.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-col items-center gap-2 bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-800 hover:border-blue-300 dark:hover:border-blue-800 rounded-xl p-5 text-center transition-colors group"
-            >
-              <div className="w-10 h-10 bg-blue-50 dark:bg-blue-950 rounded-full flex items-center justify-center text-blue-600 group-hover:bg-blue-100 dark:group-hover:bg-blue-900 transition-colors">
-                {item.icon}
-              </div>
-              <p className="text-xs font-semibold text-slate-500 dark:text-slate-400">{item.label}</p>
-              <p className="text-sm font-medium text-slate-900 dark:text-white break-all">{item.value}</p>
-            </a>
-          ))}
+          
+            href="mailto:smartpriceindiaofficial@gmail.com"
+            className="flex flex-col items-center gap-2 bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-800 hover:border-blue-300 rounded-xl p-5 text-center transition-colors group"
+          >
+            <div className="w-10 h-10 bg-blue-50 dark:bg-blue-950 rounded-full flex items-center justify-center text-blue-600">
+              <Mail size={20} />
+            </div>
+            <p className="text-xs font-semibold text-slate-500 dark:text-slate-400">Email</p>
+            <p className="text-sm font-medium text-slate-900 dark:text-white break-all">smartpriceindiaofficial@gmail.com</p>
+          </a>
+
+          
+            href="https://instagram.com/smartpriceindia"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center gap-2 bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-800 hover:border-blue-300 rounded-xl p-5 text-center transition-colors group"
+          >
+            <div className="w-10 h-10 bg-blue-50 dark:bg-blue-950 rounded-full flex items-center justify-center text-blue-600">
+              <Instagram size={20} />
+            </div>
+            <p className="text-xs font-semibold text-slate-500 dark:text-slate-400">Instagram</p>
+            <p className="text-sm font-medium text-slate-900 dark:text-white">@smartpriceindia</p>
+          </a>
+
+          
+            href="https://www.youtube.com/@SmartPriceIndiaOfficial"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center gap-2 bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-800 hover:border-blue-300 rounded-xl p-5 text-center transition-colors group"
+          >
+            <div className="w-10 h-10 bg-blue-50 dark:bg-blue-950 rounded-full flex items-center justify-center text-blue-600">
+              <Youtube size={20} />
+            </div>
+            <p className="text-xs font-semibold text-slate-500 dark:text-slate-400">YouTube</p>
+            <p className="text-sm font-medium text-slate-900 dark:text-white">SmartPriceIndia</p>
+          </a>
         </div>
 
         <div className="bg-slate-50 dark:bg-gray-900 border border-slate-200 dark:border-gray-800 rounded-2xl p-6">
           <h2 className="font-bold text-slate-900 dark:text-white mb-1">Send us a message</h2>
           <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">
-            We typically reply within 24–48 hours on business days.
+            We typically reply within 24 hours.
           </p>
-
           <div className="space-y-4">
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-semibold text-slate-600 dark:text-slate-300 mb-1.5">
-                  Your Name
-                </label>
+                <label className="block text-xs font-semibold text-slate-600 dark:text-slate-300 mb-1.5">Your Name</label>
                 <input
                   type="text"
                   placeholder="Rahul Sharma"
@@ -74,9 +73,7 @@ export default function ContactPage() {
                 />
               </div>
               <div>
-                <label className="block text-xs font-semibold text-slate-600 dark:text-slate-300 mb-1.5">
-                  Email Address
-                </label>
+                <label className="block text-xs font-semibold text-slate-600 dark:text-slate-300 mb-1.5">Email Address</label>
                 <input
                   type="email"
                   placeholder="you@example.com"
@@ -85,19 +82,7 @@ export default function ContactPage() {
               </div>
             </div>
             <div>
-              <label className="block text-xs font-semibold text-slate-600 dark:text-slate-300 mb-1.5">
-                Subject
-              </label>
-              <input
-                type="text"
-                placeholder="Review request / Feedback / Partnership"
-                className="w-full px-4 py-2.5 bg-white dark:bg-gray-800 border border-slate-200 dark:border-gray-700 rounded-xl text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
-            <div>
-              <label className="block text-xs font-semibold text-slate-600 dark:text-slate-300 mb-1.5">
-                Message
-              </label>
+              <label className="block text-xs font-semibold text-slate-600 dark:text-slate-300 mb-1.5">Message</label>
               <textarea
                 rows={5}
                 placeholder="Write your message here…"
@@ -111,7 +96,7 @@ export default function ContactPage() {
               Send Message
             </button>
             <p className="text-xs text-center text-slate-400">
-              Or email us directly at{" "}
+              Or email us at{" "}
               <a href="mailto:smartpriceindiaofficial@gmail.com" className="text-blue-600 hover:underline">
                 smartpriceindiaofficial@gmail.com
               </a>
