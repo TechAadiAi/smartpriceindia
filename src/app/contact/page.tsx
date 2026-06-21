@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import PageLayout from "@/components/layout/PageLayout";
+import { Mail, Instagram, Youtube } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact Us – SmartPriceIndia",
@@ -18,20 +19,53 @@ export default function ContactPage() {
         </p>
 
         <div className="grid sm:grid-cols-3 gap-4 mb-10">
+
           <div className="bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-800 rounded-xl p-5 text-center">
+            <div className="w-12 h-12 bg-blue-50 dark:bg-blue-950 rounded-full flex items-center justify-center mx-auto mb-3">
+              <Mail size={22} className="text-blue-600" />
+            </div>
             <p className="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-1">Email</p>
-            <p className="text-sm font-medium text-slate-900 dark:text-white break-all">smartpriceindiaofficial@gmail.com</p>
+            <p className="text-xs text-slate-900 dark:text-white break-all mb-3">smartpriceindiaofficial@gmail.com</p>
+            
+              href="mailto:smartpriceindiaofficial@gmail.com"
+              className="inline-block bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold px-4 py-2 rounded-lg transition-colors"
+            >
+              Send Email
+            </a>
           </div>
 
           <div className="bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-800 rounded-xl p-5 text-center">
+            <div className="w-12 h-12 bg-pink-50 dark:bg-pink-950 rounded-full flex items-center justify-center mx-auto mb-3">
+              <Instagram size={22} className="text-pink-600" />
+            </div>
             <p className="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-1">Instagram</p>
-            <p className="text-sm font-medium text-slate-900 dark:text-white">@smartpriceindia</p>
+            <p className="text-xs text-slate-900 dark:text-white mb-3">@smartpriceindia</p>
+            
+              href="https://instagram.com/smartpriceindia"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-pink-600 hover:bg-pink-700 text-white text-xs font-semibold px-4 py-2 rounded-lg transition-colors"
+            >
+              Follow Us
+            </a>
           </div>
 
           <div className="bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-800 rounded-xl p-5 text-center">
+            <div className="w-12 h-12 bg-red-50 dark:bg-red-950 rounded-full flex items-center justify-center mx-auto mb-3">
+              <Youtube size={22} className="text-red-600" />
+            </div>
             <p className="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-1">YouTube</p>
-            <p className="text-sm font-medium text-slate-900 dark:text-white">SmartPriceIndiaOfficial</p>
+            <p className="text-xs text-slate-900 dark:text-white mb-3">SmartPriceIndiaOfficial</p>
+            
+              href="https://www.youtube.com/@SmartPriceIndiaOfficial"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-red-600 hover:bg-red-700 text-white text-xs font-semibold px-4 py-2 rounded-lg transition-colors"
+            >
+              Subscribe
+            </a>
           </div>
+
         </div>
 
         <div className="bg-slate-50 dark:bg-gray-900 border border-slate-200 dark:border-gray-800 rounded-2xl p-6">
@@ -45,7 +79,7 @@ export default function ContactPage() {
                 <label className="block text-xs font-semibold text-slate-600 dark:text-slate-300 mb-1.5">Your Name</label>
                 <input
                   type="text"
-                  placeholder="Rahul Sharma"
+                  placeholder="Your name"
                   className="w-full px-4 py-2.5 bg-white dark:bg-gray-800 border border-slate-200 dark:border-gray-700 rounded-xl text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
@@ -53,7 +87,7 @@ export default function ContactPage() {
                 <label className="block text-xs font-semibold text-slate-600 dark:text-slate-300 mb-1.5">Email Address</label>
                 <input
                   type="email"
-                  placeholder="you@example.com"
+                  placeholder="your@email.com"
                   className="w-full px-4 py-2.5 bg-white dark:bg-gray-800 border border-slate-200 dark:border-gray-700 rounded-xl text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
