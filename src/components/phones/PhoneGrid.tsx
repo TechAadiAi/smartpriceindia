@@ -25,13 +25,16 @@ const SORT_OPTIONS: { value: SortOption; label: string }[] = [
 
 const FILTER_TAGS: { value: FilterTag; label: string }[] = [
   { value: "all", label: "All" },
-  { value: "home-kitchen", label: "Home & Kitchen" },
-  { value: "tech-gadgets", label: "Tech Gadgets" },
-  { value: "smart-home", label: "Smart Home" },
-  { value: "kitchen-appliances", label: "Kitchen Appliances" },
-  { value: "home-organization", label: "Home Organization" },
-  { value: "car-accessories", label: "Car Accessories" },
-  { value: "lifestyle-gadgets", label: "Lifestyle Gadgets" },
+  { value: "mobiles-electronics", label: "Mobiles & Electronics" },
+  { value: "fashion-beauty", label: "Fashion & Beauty" },
+  { value: "home-furniture", label: "Home & Furniture" },
+  { value: "groceries-pets", label: "Groceries & Pets" },
+  { value: "books-education", label: "Books & Education" },
+  { value: "video-music", label: "Video & Music" },
+  { value: "games-live", label: "Games & Live" },
+  { value: "pharmacy-household", label: "Pharmacy & Household" },
+  { value: "toys-kids", label: "Toys & Kids" },
+  { value: "sports-fitness", label: "Sports & Fitness" },
 ];
 
 export default function PhoneGrid({

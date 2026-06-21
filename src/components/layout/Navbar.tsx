@@ -17,13 +17,16 @@ const priceLinks = [
 ];
 
 const categoryLinks = [
-  { label: "Home & Kitchen", href: "/category/home-kitchen" },
-  { label: "Tech Gadgets", href: "/category/tech-gadgets" },
-  { label: "Smart Home", href: "/category/smart-home" },
-  { label: "Kitchen Appliances", href: "/category/kitchen-appliances" },
-  { label: "Home Organization", href: "/category/home-organization" },
-  { label: "Car Accessories", href: "/category/car-accessories" },
-  { label: "Lifestyle Gadgets", href: "/category/lifestyle-gadgets" },
+  { label: "Mobiles & Electronics", href: "/category/mobiles-electronics" },
+  { label: "Fashion & Beauty", href: "/category/fashion-beauty" },
+  { label: "Home & Furniture", href: "/category/home-furniture" },
+  { label: "Groceries & Pet Supplies", href: "/category/groceries-pets" },
+  { label: "Books & Education", href: "/category/books-education" },
+  { label: "Video & Music", href: "/category/video-music" },
+  { label: "Games & Live Shopping", href: "/category/games-live" },
+  { label: "Pharmacy & Household", href: "/category/pharmacy-household" },
+  { label: "Toys & Kids", href: "/category/toys-kids" },
+  { label: "Sports & Fitness", href: "/category/sports-fitness" },
 ];
 
 export default function Navbar() {
