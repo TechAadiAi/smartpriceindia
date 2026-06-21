@@ -145,14 +145,14 @@ export default function PhoneGrid({
 
       {/* Results count */}
       <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
-        Showing <span className="font-semibold text-slate-700 dark:text-slate-200">{filtered.length}</span> phones
+        Showing <span className="font-semibold text-slate-700 dark:text-slate-200">{filtered.length}</span> products
       </p>
 
       {filtered.length === 0 ? (
         <div className="text-center py-16">
           <p className="text-4xl mb-3">📱</p>
           <p className="text-slate-500 dark:text-slate-400">
-            No phones match this filter. Try selecting a different category.
+            No products match this filter. Try selecting a different category.
           </p>
         </div>
       ) : (
