@@ -13,6 +13,9 @@ const footerLinks = {
     { label: "Tech Gadgets", href: "/category/tech-gadgets" },
     { label: "Smart Home", href: "/category/smart-home" },
     { label: "Kitchen Appliances", href: "/category/kitchen-appliances" },
+    { label: "Home Organization", href: "/category/home-organization" },
+    { label: "Car Accessories", href: "/category/car-accessories" },
+    { label: "Lifestyle Gadgets", href: "/category/lifestyle-gadgets" },
   ],
   Company: [
     { label: "About Us", href: "/about" },

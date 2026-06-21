@@ -25,10 +25,13 @@ const SORT_OPTIONS: { value: SortOption; label: string }[] = [
 
 const FILTER_TAGS: { value: FilterTag; label: string }[] = [
   { value: "all", label: "All" },
-  { value: "tech-gadgets", label: "Tech Gadgets" },
   { value: "home-kitchen", label: "Home & Kitchen" },
+  { value: "tech-gadgets", label: "Tech Gadgets" },
   { value: "smart-home", label: "Smart Home" },
-  { value: "kitchen-appliances", label: "Appliances" },
+  { value: "kitchen-appliances", label: "Kitchen Appliances" },
+  { value: "home-organization", label: "Home Organization" },
+  { value: "car-accessories", label: "Car Accessories" },
+  { value: "lifestyle-gadgets", label: "Lifestyle Gadgets" },
 ];
 
 export default function PhoneGrid({
