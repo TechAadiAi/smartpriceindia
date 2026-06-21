@@ -55,6 +55,31 @@ html.dark .dark-card {
   border-color: #1f2937 !important;
 }
 
+/* ── Skip to main content — hidden until keyboard focus ── */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  padding: 0.6rem 1rem;
+  background-color: #f97316;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
 @layer utilities {
   .line-clamp-2 {
     display: -webkit-box;
