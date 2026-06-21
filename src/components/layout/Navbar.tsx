@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { useState, FormEvent, useRef, useEffect } from "react";
 import { Menu, X, Smartphone, Search } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 import { cn } from "@/lib/utils";
@@ -17,14 +17,33 @@ const navLinks = [
 
 export default function Navbar() {
   const pathname = usePathname();
+  const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [query, setQuery] = useState("");
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (searchOpen && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [searchOpen]);
+
+  const handleSearch = (e: FormEvent) => {
+    e.preventDefault();
+    const q = query.trim();
+    if (q) {
+      router.push(`/search?q=${encodeURIComponent(q)}`);
+      setSearchOpen(false);
+      setQuery("");
+    }
+  };
 
   return (
-    <header className="sticky top-0 z-50 bg-white/90 dark:bg-gray-950/90 backdrop-blur-md border-b border-slate-200 dark:border-gray-800">
+    <header className="sticky top-0 z-50 bg-white dark:bg-gray-950 border-b border-slate-200 dark:border-gray-800 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 font-bold text-lg">
+          <Link href="/" className="flex items-center gap-2 font-bold text-lg flex-shrink-0">
             <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
               <Smartphone size={16} className="text-white" />
             </div>
@@ -33,7 +52,6 @@ export default function Navbar() {
             </span>
           </Link>
 
-          {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
               <Link
@@ -51,15 +69,14 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* Right Actions */}
-          <div className="flex items-center gap-2">
-            <Link
-              href="/search"
+          <div className="flex items-center gap-1">
+            <button
+              onClick={() => setSearchOpen((v) => !v)}
               className="p-2 rounded-lg text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-gray-800 transition-colors"
-              aria-label="Search"
+              aria-label="Open search"
             >
-              <Search size={18} />
-            </Link>
+              {searchOpen ? <X size={18} /> : <Search size={18} />}
+            </button>
             <ThemeToggle />
             <button
               className="md:hidden p-2 rounded-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-gray-800 transition-colors"
@@ -71,7 +88,33 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Menu */}
+        {searchOpen && (
+          <div className="pb-3 pt-1 border-t border-slate-100 dark:border-gray-800">
+            <form onSubmit={handleSearch} className="flex gap-2">
+              <div className="relative flex-1">
+                <Search
+                  size={16}
+                  className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"
+                />
+                <input
+                  ref={inputRef}
+                  type="text"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder="Search phones e.g. Redmi, Samsung, 5G..."
+                  className="w-full pl-9 pr-4 py-2.5 text-sm bg-slate-50 dark:bg-gray-800 border border-slate-300 dark:border-gray-600 rounded-xl text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+              <button
+                type="submit"
+                className="px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-xl transition-colors"
+              >
+                Search
+              </button>
+            </form>
+          </div>
+        )}
+
         {menuOpen && (
           <div className="md:hidden py-3 border-t border-slate-200 dark:border-gray-800">
             <nav className="flex flex-col gap-1">

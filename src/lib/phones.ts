@@ -265,7 +265,7 @@ export const phones: Phone[] = [
       charging: "10W Standard Charging",
       network: "4G LTE, Wi-Fi 4",
     },
-    affiliateLink: "https://www.amazon.in/dp/B0CV3BQ8DY",
+    affiliateLink: "https://www.amazon.in/dp/B0CV3BQ8DYs",
     category: ["under-10000", "battery"],
     isAvailable: true,
     publishedAt: "2024-01-10",
