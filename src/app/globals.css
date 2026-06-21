@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant dark (&:is(.dark *));
 
 @layer base {
   html {
@@ -13,31 +13,14 @@
     -webkit-font-smoothing: antialiased;
   }
 
+  html.dark body {
+    background-color: #030712;
+    color: #e2e8f0;
+  }
+
   button {
     cursor: pointer;
   }
-
-  ::-webkit-scrollbar { width: 6px; height: 6px; }
-  ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 9999px; }
-}
-
-html.dark {
-  color-scheme: dark;
-}
-
-html.dark body {
-  background-color: #030712 !important;
-  color: #e2e8f0 !important;
-}
-
-html.dark header {
-  background-color: #030712 !important;
-  border-color: #1f2937 !important;
-}
-
-html.dark footer {
-  background-color: #111827 !important;
-  border-color: #1f2937 !important;
 }
 
 @layer utilities {
