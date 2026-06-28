@@ -1,3 +1,4 @@
+// Hero section with animations - v2
 import Link from "next/link";
 import { ArrowRight, TrendingUp, Shield, Zap, Tag, Star } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
