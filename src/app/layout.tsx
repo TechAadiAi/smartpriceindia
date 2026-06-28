@@ -4,6 +4,7 @@ import "./globals.css";
 import CompareDrawer from "@/components/compare/CompareDrawer";
 import ScrollToTop from "@/components/ui/ScrollToTop";
 import GoogleAnalytics from "@/components/layout/GoogleAnalytics";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -118,6 +119,7 @@ export default function RootLayout({
 
         {/* Analytics — only fires in production */}
         <GoogleAnalytics />
+        <Analytics />
       </body>
     </html>
   );
