@@ -144,6 +144,6 @@ git push
 
 **Made with ❤️ for Indian shoppers**
 
-[Website](https://smartpriceindia-h642.vercel.app) • [Instagram](https://instagram.com/smartpriceindia) • [YouTube](https://www.youtube.com/@SmartPriceIndiaOfficial)
+[Website](https://smartpriceindia.com) • [Instagram](https://instagram.com/smartpriceindia) • [YouTube](https://www.youtube.com/@SmartPriceIndiaOfficial)
 
 </div>

@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/search", "/api/"],
     },
-    sitemap: "https://smartpriceindia.in/sitemap.xml",
+    sitemap: "https://smartpriceindia.com/sitemap.xml",
   };
 }

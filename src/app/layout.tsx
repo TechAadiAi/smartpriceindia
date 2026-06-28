@@ -32,12 +32,12 @@ export const metadata: Metadata = {
   creator: "SmartPriceIndia",
   publisher: "SmartPriceIndia",
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://smartpriceindia.in"
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://smartpriceindia.com"
   ),
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://smartpriceindia.in",
+    url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://smartpriceindia.com",
     siteName: "SmartPriceIndia",
     title: "SmartPriceIndia – Best Gadget & Home Product Reviews in India",
     description:

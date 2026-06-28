@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { phones, productCategories } from "@/lib/phones";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://smartpriceindia.in";
+  const base = "https://smartpriceindia.com";
   const now = new Date();
 
   const staticPages = [
