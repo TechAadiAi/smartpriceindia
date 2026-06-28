@@ -13,19 +13,11 @@ export default function NewsletterBanner() {
 
     setStatus("loading");
 
-    // Replace with your Formspree endpoint or any email service
-    const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID;
-    if (!formspreeId) {
-      // Demo mode — just show success
-      setTimeout(() => setStatus("success"), 800);
-      return;
-    }
-
     try {
-      const res = await fetch(`https://formspree.io/f/${formspreeId}`, {
+      const res = await fetch("https://formspree.io/f/mqevzjgn", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, _subject: "New newsletter signup" }),
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({ email, _subject: "New newsletter signup - SmartPriceIndia" }),
       });
       setStatus(res.ok ? "success" : "error");
     } catch {
@@ -57,7 +49,7 @@ export default function NewsletterBanner() {
           Get Price Drop Alerts
         </h2>
         <p className="text-orange-50 mb-6 text-sm leading-relaxed">
-          Be the first to know when your dream phone goes on sale. We send
+          Be the first to know when your favourite products go on sale. We send
           weekly deal digests — no spam, unsubscribe any time.
         </p>
 
@@ -95,7 +87,7 @@ export default function NewsletterBanner() {
         )}
 
         <p className="text-orange-100 text-xs mt-4">
-          📧 Join 12,000+ Indian smartphone buyers. No spam ever.
+          📧 Join 12,000+ smart Indian shoppers. No spam ever.
         </p>
       </div>
     </div>

@@ -62,8 +62,8 @@ export default function HomePage() {
             </form>
 
             <div className="flex flex-wrap gap-3 justify-center">
-              <Link href="/category/tech-gadgets" className="inline-flex items-center gap-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold px-6 py-3 rounded-xl hover:opacity-90 transition-opacity">
-                Explore Gadgets <ArrowRight size={16} />
+              <Link href="/category/mobiles-electronics" className="inline-flex items-center gap-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold px-6 py-3 rounded-xl hover:opacity-90 transition-opacity">
+                Explore Products <ArrowRight size={16} />
               </Link>
               <Link href="/under-500" className="inline-flex items-center gap-2 bg-white dark:bg-gray-800 text-slate-700 dark:text-white font-semibold px-6 py-3 rounded-xl border border-slate-200 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-700 transition-colors">
                 Deals Under ₹500
