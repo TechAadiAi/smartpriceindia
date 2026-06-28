@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import PageLayout from "@/components/layout/PageLayout";
-import { Shield, Users, Star, Zap } from "lucide-react";
+import { Shield, Users, Star, Zap, Youtube, Instagram, Mail } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About Us – SmartPriceIndia",
@@ -69,9 +69,9 @@ export default function AboutPage() {
             of product launches every year, it can be overwhelming to know where to start.
           </p>
           <p>
-            Our editorial team researches, tests, and compares products across all budget
-            segments — from ultra-budget devices under ₹8,000 to flagship killers under
-            ₹25,000 — and presents our findings in plain, jargon-free language.
+            Our editorial team researches, tests, and compares products across all categories
+            and budget segments — from everyday essentials under ₹500 to premium picks under
+            ₹20,000 — and presents our findings in plain, jargon-free language.
           </p>
           <h2 className="text-xl font-bold text-slate-900 dark:text-white mt-6">
             Affiliate Disclosure
@@ -82,6 +82,38 @@ export default function AboutPage() {
             at no additional cost to you. This helps us keep the site running and the reviews
             independent.
           </p>
+
+          <h2 className="text-xl font-bold text-slate-900 dark:text-white mt-6">
+            Connect With Us
+          </h2>
+          <p>
+            Follow us for the latest deals, reviews, and buying guides. We&apos;d love to hear
+            from you!
+          </p>
+          <div className="flex flex-wrap gap-3 not-prose">
+            <a
+              href="https://www.youtube.com/@SmartPriceIndiaOfficial"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-red-50 dark:bg-red-950/30 text-red-600 dark:text-red-400 font-semibold px-4 py-2.5 rounded-xl border border-red-100 dark:border-red-900 hover:bg-red-100 dark:hover:bg-red-950 transition-colors text-sm"
+            >
+              <Youtube size={18} /> YouTube
+            </a>
+            <a
+              href="https://instagram.com/smartpriceindia"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-pink-50 dark:bg-pink-950/30 text-pink-600 dark:text-pink-400 font-semibold px-4 py-2.5 rounded-xl border border-pink-100 dark:border-pink-900 hover:bg-pink-100 dark:hover:bg-pink-950 transition-colors text-sm"
+            >
+              <Instagram size={18} /> Instagram
+            </a>
+            <a
+              href="mailto:smartpriceindiaofficial@gmail.com"
+              className="inline-flex items-center gap-2 bg-orange-50 dark:bg-orange-950/30 text-orange-600 dark:text-orange-400 font-semibold px-4 py-2.5 rounded-xl border border-orange-100 dark:border-orange-900 hover:bg-orange-100 dark:hover:bg-orange-950 transition-colors text-sm"
+            >
+              <Mail size={18} /> Email Us
+            </a>
+          </div>
         </div>
       </div>
     </PageLayout>
