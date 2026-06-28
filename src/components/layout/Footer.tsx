@@ -7,6 +7,8 @@ const footerLinks = {
     { label: "Under ₹1000", href: "/under-1000" },
     { label: "Under ₹2000", href: "/under-2000" },
     { label: "Under ₹5000", href: "/under-5000" },
+    { label: "Under ₹10000", href: "/under-10000" },
+    { label: "Under ₹20000", href: "/under-20000" },
   ],
   Categories: [
     { label: "Mobiles & Electronics", href: "/category/mobiles-electronics" },
@@ -43,7 +45,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
-              India&apos;s trusted source for home, kitchen and tech gadget reviews. We help you find the best products for your budget.
+              India&apos;s trusted source for honest product reviews and price comparisons. We help you find the best products for your budget.
             </p>
             <p className="text-xs text-slate-400 dark:text-slate-500 mt-3">
               * As an Amazon Associate, we earn from qualifying purchases.
