@@ -155,3 +155,59 @@ html.dark .dark-card {
     opacity: 1;
   }
 }
+
+/* ── Typewriter caret ── */
+@keyframes blinkCaret {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.type-caret {
+  display: inline-block;
+  color: #f97316;
+  font-weight: 700;
+  animation: blinkCaret 0.8s step-end infinite;
+}
+
+/* ── Rotating word entrance ── */
+@keyframes wordRotateIn {
+  0% { opacity: 0; transform: translateY(18px) scale(0.95); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+.word-rotate {
+  display: inline-block;
+  animation: wordRotateIn 0.5s ease-out;
+}
+
+/* ── Shine sweep on button ── */
+.hero-shine {
+  position: relative;
+  overflow: hidden;
+}
+.hero-shine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.45),
+    transparent
+  );
+  transform: skewX(-20deg);
+  animation: shineSweep 3s ease-in-out infinite;
+}
+@keyframes shineSweep {
+  0% { left: -120%; }
+  40%, 100% { left: 140%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .type-caret,
+  .word-rotate,
+  .hero-shine::after {
+    animation: none;
+  }
+}

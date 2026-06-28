@@ -6,6 +6,7 @@ import Footer from "@/components/layout/Footer";
 import PhoneCard from "@/components/phones/PhoneCard";
 import AdBanner from "@/components/home/AdBanner";
 import NewsletterBanner from "@/components/home/NewsletterBanner";
+import HeroAnimated from "@/components/home/HeroAnimated";
 import {
   getFeaturedPhones,
   getLatestPhones,
@@ -35,53 +36,7 @@ export default function HomePage() {
       <Navbar />
       <main>
         {/* ── Hero ── */}
-        <section className="relative bg-gradient-to-br from-orange-50 via-white to-amber-50 dark:from-gray-950 dark:via-gray-950 dark:to-gray-900 overflow-hidden">
-          {/* Floating animated product emojis */}
-          <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-            <span className="hero-float hero-float-1 absolute text-4xl md:text-5xl opacity-20">📱</span>
-            <span className="hero-float hero-float-2 absolute text-4xl md:text-5xl opacity-20">🛍️</span>
-            <span className="hero-float hero-float-3 absolute text-4xl md:text-5xl opacity-20">🎧</span>
-            <span className="hero-float hero-float-4 absolute text-4xl md:text-5xl opacity-20">👟</span>
-            <span className="hero-float hero-float-5 absolute text-4xl md:text-5xl opacity-20">⌚</span>
-            <span className="hero-float hero-float-6 absolute text-4xl md:text-5xl opacity-20">🎮</span>
-          </div>
-
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
-            <div className="hero-reveal hero-reveal-1 inline-flex items-center gap-2 bg-orange-100 dark:bg-orange-950 text-orange-700 dark:text-orange-400 text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
-              <TrendingUp size={12} />
-              India&apos;s Trusted Product Review Platform
-            </div>
-            <h1 className="hero-reveal hero-reveal-2 text-4xl md:text-6xl font-extrabold leading-tight mb-4 text-slate-900 dark:text-white">
-              Find the <span className="hero-gradient-text">Best Products</span>
-              <span className="block">at the Best Prices</span>
-            </h1>
-            <p className="hero-reveal hero-reveal-3 text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto mb-8">
-              Honest reviews and buying guides across every category — handpicked for Indian shoppers.
-            </p>
-
-            {/* Search bar */}
-            <form action="/search" method="get" className="hero-reveal hero-reveal-4 max-w-xl mx-auto flex gap-2 mb-8">
-              <input
-                name="q"
-                type="text"
-                placeholder="Search air fryer, smart watch, robot vacuum..."
-                className="flex-1 px-5 py-3.5 bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-700 rounded-xl text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-orange-500 shadow-sm"
-              />
-              <button type="submit" className="px-6 py-3.5 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-xl transition-colors shadow-sm">
-                Search
-              </button>
-            </form>
-
-            <div className="hero-reveal hero-reveal-5 flex flex-wrap gap-3 justify-center">
-              <Link href="/category/mobiles-electronics" className="inline-flex items-center gap-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold px-6 py-3 rounded-xl hover:opacity-90 transition-opacity">
-                Explore Products <ArrowRight size={16} />
-              </Link>
-              <Link href="/under-500" className="inline-flex items-center gap-2 bg-white dark:bg-gray-800 text-slate-700 dark:text-white font-semibold px-6 py-3 rounded-xl border border-slate-200 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-700 transition-colors">
-                Deals Under ₹500
-              </Link>
-            </div>
-          </div>
-        </section>
+        <HeroAnimated />
 
         {/* ── Featured Categories ── */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
