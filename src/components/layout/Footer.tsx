@@ -50,6 +50,9 @@ export default function Footer() {
             <p className="text-xs text-slate-400 dark:text-slate-500 mt-3">
               * As an Amazon Associate, we earn from qualifying purchases.
             </p>
+            <p className="text-xs text-slate-400 dark:text-slate-500 mt-1">
+              Amazon and the Amazon logo are trademarks of Amazon.com, Inc. or its affiliates.
+            </p>
           </div>
 
           {Object.entries(footerLinks).map(([title, links]) => (
