@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 };
 
 export default function PrivacyPolicyPage() {
-  const lastUpdated = "1 March 2024";
+  const lastUpdated = "28 June 2026";
 
   return (
     <PageLayout showTopAd={false} showBottomAd={false}>
@@ -59,7 +59,7 @@ export default function PrivacyPolicyPage() {
             },
             {
               title: "10. Contact",
-              content: `If you have questions about this Privacy Policy, please contact us at hello@smartpriceindia.in.`,
+              content: `If you have questions about this Privacy Policy, please contact us at smartpriceindiaofficial@gmail.com.`,
             },
           ].map((section) => (
             <div key={section.title}>

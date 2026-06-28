@@ -14,7 +14,7 @@ export default function DisclaimerPage() {
           Disclaimer
         </h1>
         <p className="text-sm text-slate-500 dark:text-slate-400 mb-8">
-          Last updated: 1 March 2024
+          Last updated: 28 June 2026
         </p>
 
         <div className="space-y-6 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
@@ -25,7 +25,7 @@ export default function DisclaimerPage() {
             },
             {
               title: "Pricing Accuracy",
-              content: `Smartphone prices change frequently. While we strive to update prices regularly, the prices shown on this site may not reflect the current price on Amazon or other retailers. Always verify the final price on the retailer's website before making a purchase decision. SmartPriceIndia is not responsible for any pricing discrepancies.`,
+              content: `Product prices change frequently. While we strive to update prices regularly, the prices shown on this site may not reflect the current price on Amazon or other retailers. Always verify the final price on the retailer's website before making a purchase decision. SmartPriceIndia is not responsible for any pricing discrepancies.`,
             },
             {
               title: "Editorial Independence",
@@ -41,7 +41,7 @@ export default function DisclaimerPage() {
             },
             {
               title: "Product Availability",
-              content: `Product availability and specifications are subject to change without notice. Some phones listed on our site may be discontinued or out of stock. We recommend verifying availability on Amazon or the manufacturer's website before purchasing.`,
+              content: `Product availability and specifications are subject to change without notice. Some products listed on our site may be discontinued or out of stock. We recommend verifying availability on Amazon or the manufacturer's website before purchasing.`,
             },
           ].map((section) => (
             <div key={section.title} className="bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-800 rounded-xl p-5">

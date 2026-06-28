@@ -26,7 +26,7 @@ export default function AboutPage() {
             {
               icon: <Shield className="text-blue-600" size={22} />,
               title: "Independent Reviews",
-              desc: "No sponsored content. Every phone is evaluated on its own merits.",
+              desc: "No sponsored content. Every product is evaluated on its own merits.",
             },
             {
               icon: <Users className="text-blue-600" size={22} />,
