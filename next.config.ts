@@ -5,9 +5,9 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "placehold.co" },
-      // Add real CDN hostnames here when you have actual phone images:
-      // { protocol: "https", hostname: "m.media-amazon.com" },
-      // { protocol: "https", hostname: "your-cdn.com" },
+      { protocol: "https", hostname: "m.media-amazon.com" },
+      { protocol: "https", hostname: "images-na.ssl-images-amazon.com" },
+      { protocol: "https", hostname: "images-eu.ssl-images-amazon.com" },
     ],
     formats: ["image/avif", "image/webp"],
     deviceSizes: [375, 640, 750, 828, 1080, 1200, 1920],
