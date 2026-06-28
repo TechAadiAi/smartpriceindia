@@ -6,6 +6,10 @@ interface AdBannerProps {
   size?: "horizontal" | "rectangle" | "leaderboard";
 }
 
+// ── Ad placeholders are hidden until Google AdSense is approved ──
+// To re-enable: set SHOW_ADS to true after adding your AdSense code.
+const SHOW_ADS = false;
+
 const sizeClasses = {
   horizontal: "h-24 max-w-3xl",
   rectangle: "h-64 max-w-sm",
@@ -17,6 +21,9 @@ export default function AdBanner({
   className,
   size = "horizontal",
 }: AdBannerProps) {
+  // Hidden until ads are enabled
+  if (!SHOW_ADS) return null;
+
   return (
     <div
       className={cn(
