@@ -25,7 +25,7 @@ export default function DisclaimerPage() {
             },
             {
               title: "Pricing Accuracy",
-              content: `Product prices change frequently. While we strive to update prices regularly, the prices shown on this site may not reflect the current price on Amazon or other retailers. Always verify the final price on the retailer's website before making a purchase decision. SmartPriceIndia is not responsible for any pricing discrepancies.`,
+              content: `Product prices change frequently. While we strive to update prices regularly, the prices shown on this site may not reflect the current price on Amazon or other retailers. Product prices and availability are accurate as of the date/time indicated and are subject to change. Any price and availability information displayed on Amazon at the time of purchase will apply. Always verify the final price on the retailer's website before making a purchase decision. SmartPriceIndia is not responsible for any pricing discrepancies.`,
             },
             {
               title: "Editorial Independence",
