@@ -65,13 +65,13 @@ export default function PhoneJsonLd({ phone, url }: JsonLdProps) {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://smartpriceindia.in",
+            item: "https://smartpriceindia.com",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Phones",
-            item: "https://smartpriceindia.in/latest",
+            item: "https://smartpriceindia.com/latest",
           },
           {
             "@type": "ListItem",
@@ -90,10 +90,10 @@ export default function PhoneJsonLd({ phone, url }: JsonLdProps) {
         publisher: {
           "@type": "Organization",
           name: "SmartPriceIndia",
-          url: "https://smartpriceindia.in",
+          url: "https://smartpriceindia.com",
           logo: {
             "@type": "ImageObject",
-            url: "https://smartpriceindia.in/logo.png",
+            url: "https://smartpriceindia.com/logo.png",
           },
         },
         datePublished: phone.publishedAt,

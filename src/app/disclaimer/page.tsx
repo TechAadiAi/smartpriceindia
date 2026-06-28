@@ -55,7 +55,7 @@ export default function DisclaimerPage() {
 
         <div className="mt-8 p-4 bg-yellow-50 dark:bg-yellow-950/20 border border-yellow-200 dark:border-yellow-900 rounded-xl">
           <p className="text-xs text-yellow-800 dark:text-yellow-300 font-medium">
-            <strong>Amazon Associates Disclosure:</strong> SmartPriceIndia.in is a participant in
+            <strong>Amazon Associates Disclosure:</strong> SmartPriceIndia.com is a participant in
             the Amazon Associates Programme, an affiliate advertising programme designed to
             provide a means for sites to earn advertising fees by advertising and linking to
             Amazon.in. — as an Amazon Associate we earn from qualifying purchases.

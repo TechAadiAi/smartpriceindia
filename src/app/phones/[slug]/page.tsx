@@ -53,7 +53,7 @@ export default async function PhoneReviewPage({ params }: Props) {
     : null;
 
   const specEntries = Object.entries(phone.specs);
-  const pageUrl = `https://smartpriceindia.in/phones/${phone.slug}`;
+  const pageUrl = `https://smartpriceindia.com/phones/${phone.slug}`;
 
   return (
     <>
