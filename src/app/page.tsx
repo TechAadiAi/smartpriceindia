@@ -17,9 +17,9 @@ import {
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "SmartPriceIndia – Best Home, Kitchen & Tech Gadget Reviews in India",
+  title: "SmartPriceIndia – Best Product Reviews & Price Comparisons in India",
   description:
-    "Discover the best home, kitchen and tech gadgets in India. Expert reviews, price comparisons, and buying guides for every budget. Updated daily.",
+    "Discover the best products across mobiles, fashion, home, groceries and more in India. Expert reviews, price comparisons, and buying guides for every budget. Updated daily.",
 };
 
 export default function HomePage() {
@@ -45,7 +45,7 @@ export default function HomePage() {
               <span className="block">at the Best Prices</span>
             </h1>
             <p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto mb-8">
-              Honest reviews and buying guides for home, kitchen & tech gadgets — handpicked for Indian shoppers.
+              Honest reviews and buying guides across every category — handpicked for Indian shoppers.
             </p>
 
             {/* Search bar */}
@@ -209,7 +209,7 @@ export default function HomePage() {
               { q: "Are these reviews genuine?", a: "Yes. We research and test products independently. We never accept payment to influence our reviews." },
               { q: "Do you earn commission?", a: "As an Amazon Associate, we earn from qualifying purchases at no extra cost to you. This keeps the site free." },
               { q: "How often are prices updated?", a: "We check prices regularly, but always verify the final price on Amazon before buying as prices change frequently." },
-              { q: "Which categories do you cover?", a: "Home & Kitchen, Tech Gadgets, Smart Home, Kitchen Appliances, Home Organization, Car Accessories and Lifestyle Gadgets." },
+              { q: "Which categories do you cover?", a: "Mobiles & Electronics, Fashion & Beauty, Home & Furniture, Groceries & Pet Supplies, Books & Education, Video & Music, Games & Live Shopping, Pharmacy & Household, Toys & Kids, and Sports & Fitness." },
             ].map((faq, i) => (
               <details key={i} className="group bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-800 rounded-xl p-5">
                 <summary className="flex items-center justify-between cursor-pointer font-semibold text-slate-900 dark:text-white list-none">
