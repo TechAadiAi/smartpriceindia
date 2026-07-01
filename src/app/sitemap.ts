@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { phones, productCategories } from "@/lib/phones";
+import { getAllBlogPosts } from "@/lib/blog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://smartpriceindia.com";
@@ -8,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
     { url: base, priority: 1.0 },
     { url: `${base}/latest`, priority: 0.9 },
+    { url: `${base}/blog`, priority: 0.7 },
     { url: `${base}/under-500`, priority: 0.9 },
     { url: `${base}/under-1000`, priority: 0.9 },
     { url: `${base}/under-2000`, priority: 0.9 },
@@ -34,5 +36,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...categoryPages, ...productPages];
+  const blogPages = getAllBlogPosts().map((post) => ({
+    url: `${base}/blog/${post.slug}`,
+    lastModified: new Date(post.updatedAt),
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...categoryPages, ...productPages, ...blogPages];
 }

@@ -108,6 +108,10 @@ export default function Navbar() {
             <Link href="/latest" className={cn("px-3 py-2 rounded-lg text-sm font-medium transition-colors", pathname === "/latest" ? "bg-orange-50 dark:bg-orange-950 text-orange-600 dark:text-orange-400" : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-gray-800")}>
               Latest
             </Link>
+
+            <Link href="/blog" className={cn("px-3 py-2 rounded-lg text-sm font-medium transition-colors", pathname.startsWith("/blog") ? "bg-orange-50 dark:bg-orange-950 text-orange-600 dark:text-orange-400" : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-gray-800")}>
+              Blog
+            </Link>
           </nav>
 
           {/* Right actions */}
@@ -148,6 +152,7 @@ export default function Navbar() {
               <Link key={link.href} href={link.href} onClick={() => setMenuOpen(false)} className="block px-3 py-2 rounded-lg text-sm text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-gray-800">{link.label}</Link>
             ))}
             <Link href="/latest" onClick={() => setMenuOpen(false)} className="block px-3 py-2 mt-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-gray-800">Latest</Link>
+            <Link href="/blog" onClick={() => setMenuOpen(false)} className="block px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-gray-800">Blog</Link>
           </div>
         )}
       </div>
